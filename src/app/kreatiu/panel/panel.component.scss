@@ -1,0 +1,64 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.example-app-name {
+  flex: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+mat-sidenav-content {
+  background: linear-gradient(175deg, rgb(245, 157, 45), rgb(48, 63, 159));
+}
+
+h1 {
+  color: white;
+}
+
+mat-sidenav {
+  background-color: rgb(48, 63, 159);
+
+  mat-list-item {
+    padding: 30px 20px;
+
+    span {
+      color: white;
+      line-height: 30px;
+    }
+
+    mat-icon {
+      color: white;
+      line-height: 30px;
+
+    }
+  }
+
+  mat-list-item::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    height: 2px;
+    background-color: white;
+  }
+}
+
+

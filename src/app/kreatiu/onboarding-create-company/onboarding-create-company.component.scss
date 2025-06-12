@@ -1,0 +1,134 @@
+.background {
+  background: linear-gradient(175deg, rgb(245, 157, 45), rgb(48, 63, 159));
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.aina-interview {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+.aina-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.aina-text {
+  //flex-grow: 1; Lo he tenido que ocultar porque directamente no sale la animación
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* The cursor */
+  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+mat-card-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #303f9f;
+  text-align: center;
+}
+
+mat-card-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.icon {
+  font-size: 2em;
+  color: #303f9f;
+  margin-right: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  justify-content: flex-end;
+}
+
+button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3f51b5;
+}
+
+mat-divider {
+  margin: 10px 0;
+}

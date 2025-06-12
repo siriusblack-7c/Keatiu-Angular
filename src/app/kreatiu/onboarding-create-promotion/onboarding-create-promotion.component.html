@@ -1,0 +1,207 @@
+<app-header-authenticated></app-header-authenticated>
+
+<div class="background">
+  <div class="logo-container">
+    <img src="/assets/logo_full.png" alt="Kreatiu Logo" class="logo">
+  </div>
+  <mat-card class="welcome-card">
+    <div class="aina-interview">
+      <img src="/assets/kreatiu/aina_cut_small.png" alt="Aina Roma" class="aina-image">
+      <div class="aina-text" id="animated-text">
+        <p>{{ displayedText }}</p>
+      </div>
+    </div>
+    <mat-horizontal-stepper linear (selectionChange)="onStepChange($event)">
+      <mat-step [stepControl]="promotionTitleFormGroup">
+        <div [formGroup]="promotionTitleFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'ONBOARDING_PROMOTION_TITLE_LABEL' | translate }}</mat-label>
+            <input
+              matInput
+              formControlName="title"
+              minlength="3"
+              maxlength="100"
+              required
+              placeholder="{{'ONBOARDING_PROMOTION_TITLE_EXAMPLE' | translate}}"
+            >
+            <mat-hint align="end"
+                      [ngStyle]="{'color': promotionTitleFormGroup.controls['title'].value.length < 3 || promotionTitleFormGroup.controls['title'].value.length > 100 ? 'orange' : 'green'}">
+              {{ promotionTitleFormGroup.controls['title'].value.length }}
+            </mat-hint>
+            <mat-error
+              *ngIf="promotionTitleFormGroup.controls['title'].invalid && promotionTitleFormGroup.controls['title'].dirty">
+              {{ 'ONBOARDING_PROMOTION_TITLE_ERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-button matStepperNext
+                    [disabled]="!promotionTitleFormGroup.valid">{{ 'ONBOARDING_PROMOTION_NEXT_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="promotionDescriptionFormGroup">
+        <div [formGroup]="promotionDescriptionFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'ONBOARDING_PROMOTION_DESCRIPTION_LABEL' | translate }}</mat-label>
+            <textarea
+              matInput
+              formControlName="description"
+              minlength="30"
+              maxlength="1000"
+              required
+              style="min-height: 200px"
+              placeholder="{{'ONBOARDING_PROMOTION_DESCRIPTION_EXAMPLE' | translate}}"
+            ></textarea>
+            <mat-hint align="end"
+                      [ngStyle]="{'color': promotionDescriptionFormGroup.controls['description'].value.length < 30 || promotionDescriptionFormGroup.controls['description'].value.length > 1000 ? 'orange' : 'green'}">
+              {{ promotionDescriptionFormGroup.controls['description'].value.length }}
+            </mat-hint>
+            <mat-error
+              *ngIf="promotionDescriptionFormGroup.controls['description'].invalid && promotionDescriptionFormGroup.controls['description'].dirty">
+              {{ 'ONBOARDING_PROMOTION_DESCRIPTION_ERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-button matStepperPrevious>{{ 'ONBOARDING_PROMOTION_PREVIOUS_BUTTON' | translate }}</button>
+            <button mat-button matStepperNext
+                    [disabled]="!promotionDescriptionFormGroup.valid">{{ 'ONBOARDING_PROMOTION_NEXT_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+          <pre>{{ 'ONBOARDING_WELCOME_PROMOTION_CONTENT_EXAMPLE' | translate }}</pre>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="promotionTargetFormGroup">
+        <div [formGroup]="promotionTargetFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'ONBOARDING_PROMOTION_TARGET_LABEL' | translate }}</mat-label>
+            <input
+              matInput
+              formControlName="target"
+              minlength="3"
+              maxlength="100"
+              required
+              placeholder="{{'ONBOARDING_PROMOTION_TARGET_EXAMPLE' | translate}}"
+            >
+            <mat-hint align="end"
+                      [ngStyle]="{'color': promotionTargetFormGroup.controls['target'].value.length < 3 || promotionTargetFormGroup.controls['target'].value.length > 100 ? 'orange' : 'green'}">
+              {{ promotionTargetFormGroup.controls['target'].value.length }}
+            </mat-hint>
+            <mat-error
+              *ngIf="promotionTargetFormGroup.controls['target'].invalid && promotionTargetFormGroup.controls['target'].dirty">
+              {{ 'ONBOARDING_PROMOTION_TARGET_ERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-button matStepperPrevious>{{ 'ONBOARDING_PROMOTION_PREVIOUS_BUTTON' | translate }}</button>
+            <button mat-button matStepperNext
+                    [disabled]="!promotionTargetFormGroup.valid">{{ 'ONBOARDING_PROMOTION_NEXT_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="promotionCommunicationRulesFormGroup">
+        <div [formGroup]="promotionCommunicationRulesFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'ONBOARDING_PROMOTION_COMMUNICATION_RULES_LABEL' | translate }}</mat-label>
+            <textarea
+              matInput
+              formControlName="communication_rules"
+              minlength="3"
+              maxlength="1000"
+              required
+              style="min-height: 200px"
+              placeholder="{{'ONBOARDING_PROMOTION_COMMUNICATION_RULES_EXAMPLE' | translate}}"
+            ></textarea>
+            <mat-hint align="end"
+                      [ngStyle]="{'color': promotionCommunicationRulesFormGroup.controls['communication_rules'].value.length < 3 || promotionCommunicationRulesFormGroup.controls['communication_rules'].value.length > 1000 ? 'orange' : 'green'}">
+              {{ promotionCommunicationRulesFormGroup.controls['communication_rules'].value.length }}
+            </mat-hint>
+            <mat-error
+              *ngIf="promotionCommunicationRulesFormGroup.controls['communication_rules'].invalid && promotionCommunicationRulesFormGroup.controls['communication_rules'].dirty">
+              {{ 'ONBOARDING_PROMOTION_COMMUNICATION_RULES_ERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-button matStepperPrevious>{{ 'ONBOARDING_PROMOTION_PREVIOUS_BUTTON' | translate }}</button>
+            <button mat-button matStepperNext
+                    [disabled]="!promotionCommunicationRulesFormGroup.valid">{{ 'ONBOARDING_PROMOTION_NEXT_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="ctaFormGroup">
+        <div [formGroup]="ctaFormGroup">
+          <mat-label>{{ 'ONBOARDING_PROMOTION_CTA_TYPE_LABEL' | translate }}</mat-label>
+          <mat-radio-group formControlName="call_to_action_type" required>
+            <div *ngFor="let action of actionTypes; let i = index" class="radio-option">
+              <mat-radio-button [value]="i">{{ action.display | translate }}</mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <mat-form-field *ngIf="ctaFormGroup.controls['call_to_action_type'].value != null">
+            <mat-label>{{ 'ONBOARDING_PROMOTION_CTA_LABEL' | translate }}</mat-label>
+            <input
+              matInput
+              formControlName="call_to_action"
+              minlength="3"
+              maxlength="100"
+              required
+              placeholder="{{'ONBOARDING_PROMOTION_CTA_EXAMPLE' | translate}}"
+            >
+            <mat-hint align="end"
+                      [ngStyle]="{'color':
+                      ctaFormGroup.controls['call_to_action'].value.length < 3 &&
+                      ctaFormGroup.controls['call_to_action_type'].value == 0 ||
+                      ctaFormGroup.controls['call_to_action'].value.length > 100 ? 'orange' : 'green'}">
+              {{ ctaFormGroup.controls['call_to_action'].value.length }}
+            </mat-hint>
+            <mat-error
+              *ngIf="ctaFormGroup.controls['call_to_action'].invalid && ctaFormGroup.controls['call_to_action'].dirty">
+              {{ 'ONBOARDING_PROMOTION_CTA_ERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-label>{{ 'ONBOARDING_PROMOTION_LANGUAGE' | translate }}</mat-label>
+          <mat-radio-group formControlName="language" required>
+            <div *ngFor="let language of languages">
+              <mat-radio-button [value]="language.value">
+                {{ language.display | translate }}
+              </mat-radio-button>
+            </div>
+          </mat-radio-group>
+
+          <mat-card-actions>
+            <button mat-button matStepperPrevious>{{ 'ONBOARDING_PROMOTION_PREVIOUS_BUTTON' | translate }}</button>
+            <button mat-button matStepperNext
+                    [disabled]="!ctaFormGroup.valid">{{ 'ONBOARDING_PROMOTION_NEXT_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="platformFormGroup">
+        <div [formGroup]="platformFormGroup">
+          <mat-label>{{ 'ONBOARDING_PROMOTION_PLATFORMS_LABEL' | translate }}</mat-label>
+          <div formArrayName="platforms">
+            <div *ngFor="let platform of platform_labels; let i = index" class="checkbox-option">
+              <mat-checkbox [formControlName]="i">{{ platform | translate }}</mat-checkbox>
+            </div>
+          </div>
+          <mat-card-actions>
+            <button mat-button matStepperPrevious>{{ 'ONBOARDING_PROMOTION_PREVIOUS_BUTTON' | translate }}</button>
+            <button mat-button (click)="onSubmit()"
+                    [disabled]="!platformFormGroup.valid">{{ 'ONBOARDING_PROMOTION_FINISH_BUTTON' | translate }}
+            </button>
+          </mat-card-actions>
+          <div>
+            <mat-error *ngIf="error">{{ error }}</mat-error>
+          </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+</div>
+<app-footer></app-footer>

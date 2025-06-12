@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: Inter,sans-serif;
+  background-color: #001970;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  padding: 0 5rem;
+
+  background-image: url('/assets/kreatiu/website/home/influencers_home.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    font-size: 1.5vw;
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 2000px) {
+  .container {
+    background-position: calc(100% - 0px) center;
+  }
+}
+
+@media (max-width: 1500px) {
+  .container {
+    background-position: calc(100% + 250px) center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    background-position: calc(100% + 300px) center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    background-position: calc(100% + 250px) center;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    background-position: calc(100% + 560px) center;
+  }
+}
+
+
+.main-title {
+  //font-size: 2.5em;
+  //margin-bottom: 10px;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.benefits {
+  margin-bottom: 40px;
+}
+
+.benefit {
+  margin-top: 2.5rem;
+
+  p {
+    line-height: 1.3;
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
+}
+
+.highlight {
+  color: #ff8f00; /* Naranja */
+}
+
+.cta-button {
+  background-color: #ffb300; /* Amarillo */
+  color: #001970; /* Azul oscuro */
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: fit-content;
+
+  //display: flex;
+  align-items: center;
+
+  .google-icon {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+  }
+
+  margin-right: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #ffa000;
+}
+
+.explore-button {
+  background-color: #faedce; /* Amarillo */
+  color: #000926; /* Azul oscuro */
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: fit-content;
+
+  //display: flex;
+  align-items: center;
+
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+
+.link-empresa {
+  display: inline-block;
+  color: #00b0ff; /* Azul claro */
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.link-empresa:hover {
+  color: #80d8ff;
+}
+
+.little-text {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: #fffc;
+}
+
+.scroll-indicator {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 18px 33px;
+  border-radius: 73px;
+  box-shadow: 0 0 42px rgba(0, 0, 0, 0.5);
+  animation: blink 3s infinite;
+  position: fixed;
+  transition: transform 0.3s ease;
+
+  .arrow-wrapper {
+    animation: bounce 2s infinite;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-wrapper.second {
+    animation-delay: 0.3s;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.6);
+    transform: rotate(-45deg);
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+  }
+
+  &.reverse {
+    .arrow {
+      transform: rotate(135deg); // flecha hacia arriba
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 42px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(0, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 42px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,477 @@
+<app-header-influencers></app-header-influencers>
+
+<div class="container">
+
+  <h1 class="main-title">KREATIU INFLUENCERS</h1>
+  <p class="subtitle">La academia de los influencers. Tu carrera empieza aquí.</p>
+
+  <section class="benefits">
+    <div class="benefit">
+      <h2>Gana autoridad</h2>
+      <p>Diferénciate con contenido profesional y una planificación estratégica.</p>
+    </div>
+
+    <div class="benefit">
+      <h2>Aumenta interacciones</h2>
+      <p>Publica contenido que tu audiencia quiere ver.</p>
+    </div>
+
+    <div class="benefit">
+      <h2 class="highlight">Monetiza tus redes</h2>
+      <p>Convierte tu esfuerzo en ingresos.</p>
+    </div>
+  </section>
+
+  <div>
+    <button class="cta-button" (click)="startWithGoogle()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/1024px-Google_Favicon_2025.svg.png" alt="Google" class="google-icon" />
+      Iniciar con Google
+    </button>
+    <button class="explore-button">
+      Explorar la plataforma
+    </button>
+  </div>
+  <p class="little-text">Accede gratis, sin tarjetas ni permanencia.</p>
+
+  <div *ngIf="!isOnCTA" class="scroll-indicator" [ngClass]="{ 'reverse': isNearBottom }" (click)="scrollDown()">
+    <div class="arrow-wrapper">
+      <div class="arrow"></div>
+    </div>
+    <div class="arrow-wrapper second">
+      <div class="arrow"></div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 4rem 2rem; background-color: #001970;">
+
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 500px; flex: 1;">
+
+    <h2 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem; text-align: center; width: 100%;">
+      Todo lo que necesitas para ser constante y rentable en redes
+    </h2>
+
+    <!-- Bloques de beneficios -->
+    <div style="background: white; color: black; border-radius: 1rem; padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center;">
+      <span style="font-size: 1.8rem; color: #b388ff;">📅</span>
+      <div>
+        <div style="font-weight: 600;">Agenda</div>
+        <div style="font-size: 0.9rem;">Organiza tus publicaciones en minutos</div>
+      </div>
+    </div>
+
+    <div style="background: white; color: black; border-radius: 1rem; padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center;">
+      <span style="font-size: 1.8rem; color: #b388ff;">💡</span>
+      <div>
+        <div style="font-weight: 600;">Ideas diarias</div>
+        <div style="font-size: 0.9rem;">Recibe contenido listo para adaptar y publicar</div>
+      </div>
+    </div>
+
+    <div style="background: white; color: black; border-radius: 1rem; padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center;">
+      <span style="font-size: 1.8rem; color: #b388ff;">📚</span>
+      <div>
+        <div style="font-weight: 600;">Academia</div>
+        <div style="font-size: 0.9rem;">Aprende en poco tiempo lo que otros tardan años</div>
+      </div>
+    </div>
+
+    <div style="background: white; color: black; border-radius: 1rem; padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center;">
+      <span style="font-size: 1.8rem; color: #b388ff;">💰</span>
+      <div>
+        <div style="font-weight: 600;">Monetización</div>
+        <div style="font-size: 0.9rem;">
+            Gana desde el primer día con nuestro sistema de referidos
+<!--            <a href="#" style="text-decoration: none; color: #c6a700;" >Gana 20 € por el primer vídeo que subas.</a>-->
+        </div>
+      </div>
+    </div>
+
+    <div style="background: white; color: black; border-radius: 1rem; padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center;">
+      <span style="font-size: 1.8rem; color: #b388ff;">📊</span>
+      <div>
+        <div style="font-weight: 600;">Panel simple</div>
+        <div style="font-size: 0.9rem;">Sin distracciones, sin curva de aprendizaje</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 style="margin: 1rem auto; font-size: 2rem; font-weight: 600; text-align: center;">
+    ¿Cómo funciona?
+  </h2>
+  <div style="width: 100%; max-width: 1120px; margin: 1rem auto; text-align: center;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=UGc27HOUbMEKUiRw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      ></iframe>
+    </div>
+
+    <p class="little-text">Mira cómo funciona Kreatiu en menos de 3 minutos.</p>
+  </div>
+</div>
+
+<div class="container" style="background-color: #001970; padding: 4rem 2rem; color: white; text-align: center; align-items: center;">
+
+  <h2 style="margin: 0 auto; font-size: 2rem; font-weight: 600;">¿Qué es Kreatiu?</h2>
+
+  <p style="margin: 1rem auto 3rem auto; width: 80%; font-size: 1.1rem; line-height: 1.5; max-width: 700px;">
+    Una plataforma que te ayuda a crear, organizar y monetizar contenido como un profesional. Diseñada para influencers, creadores y emprendedores con poco tiempo y muchas ganas.
+  </p>
+
+  <div class="card-container" style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="padding: 1rem; border-radius: 1rem; overflow: hidden;">
+        <mat-card-content style="color: black; font-weight: 500; text-align: left;">
+          <span style="font-size: 1.2rem;">✅ Recibe ideas de contenido adaptadas a ti.</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="padding: 1rem; border-radius: 1rem; overflow: hidden;">
+        <mat-card-content style="color: black; font-weight: 500; text-align: left;">
+          <span style="font-size: 1.2rem;">✅ Organízalas en tu agenda en 5 minutos.</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="padding: 1rem; border-radius: 1rem; overflow: hidden;">
+        <mat-card-content style="color: black; font-weight: 500; text-align: left;">
+          <span style="font-size: 1.2rem;">✅ Aprende lo que funciona y gana por invitar a otros.</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="border-radius: 1rem; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Image 1" style="width: 100%; height: auto; display: block;" />
+      </mat-card>
+    </div>
+
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="border-radius: 1rem; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Image 2" style="width: 100%; height: auto; display: block;" />
+      </mat-card>
+    </div>
+
+    <div style="max-width: 300px; width: 100%;">
+      <mat-card style="border-radius: 1rem; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Image 3" style="width: 100%; height: auto; display: block;" />
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center;">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
+    Influencers y emprendedores que ya confían en Kreatiu
+  </h2>
+
+  <!-- Tarjetas de testimonios -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto 3rem;">
+
+    <div style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"Publicaba sin orden. Ahora tengo contenido para semanas. Y ya estoy ganando dinero."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          M
+        </div>
+        <div>
+          <div style="font-weight: bold;">Marina G.</div>
+          <div style="font-size: 0.85rem; color: gray;">microinfluencer de cocina</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"Kreatiu me dio estructura y libertad. Literalmente me ha salvado el proyecto."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          A
+        </div>
+        <div>
+          <div style="font-weight: bold;">Alex R.</div>
+          <div style="font-size: 0.85rem; color: gray;">emprendedor en TikTok</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"Lo recomiendo hasta para los que están empezando desde cero."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          L
+        </div>
+        <div>
+          <div style="font-weight: bold;">Laura V.</div>
+          <div style="font-size: 0.85rem; color: gray;">creadora de estilo de vida</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Avatares de usuarios -->
+  <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1" style="width: 48px; height: 48px; border-radius: 50%;" />
+    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2" style="width: 48px; height: 48px; border-radius: 50%;" />
+    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3" style="width: 48px; height: 48px; border-radius: 50%;" />
+    <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User 4" style="width: 48px; height: 48px; border-radius: 50%;" />
+    <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User 5" style="width: 48px; height: 48px; border-radius: 50%;" />
+  </div>
+
+  <p style="font-size: 0.9rem; color: #ccc;">
+    Y otros miles de creadores que hacen crecer su comunidad
+  </p>
+
+</div>
+
+<div class="container" style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
+    Elige tu ritmo
+  </h2>
+
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1rem;
+  ">
+
+    <!-- Starter -->
+    <div style="
+      background-color: white;
+      color: black;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 300px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    ">
+      <div>
+        <div style="background-color: #e8f5e9; color: #388e3c; font-size: 0.9rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;">
+          🟢 Básico
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Starter</h3>
+        <div style="font-size: 2rem; font-weight: bold;">0 €<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+        <p style="margin: 1rem 0; color: #555;">Ideal para probar sin presión</p>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li>✅ Acceso a la agenda básica</li>
+          <li>✅ Ideas de contenido limitadas</li>
+          <li>✅ Academia (acceso parcial)</li>
+          <li>✅ Sin comisiones por referidos</li>
+        </ul>
+      </div>
+      <button style="
+        margin-top: 2rem;
+        padding: 0.75rem;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+      ">Empieza gratis</button>
+    </div>
+
+    <!-- Influencer -->
+    <div style="
+      background-color: white;
+      color: black;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 300px;
+      width: 100%;
+      text-align: left;
+      border: 2px solid #c084fc;
+      box-shadow: 0 0 0 2px #c084fc33;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    ">
+      <div>
+        <div style="background-color: #ede9fe; color: #7c3aed; font-size: 0.9rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;">
+          🔵 Popular
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Influencer</h3>
+        <div style="font-size: 2rem; font-weight: bold;">10 €<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+        <p style="margin: 1rem 0; color: #555;">Ideal para publicar cada semana y ganar visibilidad</p>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li>✅ Agenda avanzada ilimitada</li>
+          <li>✅ Ideas de contenido personalizadas</li>
+          <li>✅ Academia completa</li>
+          <li>✅ Soporte prioritario</li>
+          <li>✅ Comisiones básicas</li>
+        </ul>
+      </div>
+      <button style="
+        margin-top: 2rem;
+        padding: 0.75rem;
+        width: 100%;
+        border-radius: 8px;
+        border: none;
+        background: #c084fc;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      ">Suscribirme</button>
+    </div>
+
+    <!-- Embajador -->
+    <div style="
+      background-color: white;
+      color: black;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 300px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    ">
+      <div>
+        <div style="background-color: #f3e8ff; color: #a855f7; font-size: 0.9rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;">
+          🟣 Completo
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Embajador</h3>
+        <div style="font-size: 2rem; font-weight: bold;">10 €<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+        <p style="margin: 1rem 0; color: #555;">Ideal para monetizar referidos y potenciar tu red</p>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li>✅ Todo lo del plan Influencer</li>
+          <li>✅ Sistema de comisiones avanzado</li>
+          <li>✅ Dashboard de referidos</li>
+          <li>✅ Coaching mensual</li>
+          <li>✅ Herramientas de analítica</li>
+        </ul>
+      </div>
+      <button style="
+        margin-top: 2rem;
+        padding: 0.75rem;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+      ">Ver beneficios</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" style="background-color: #001970; color: white; padding: 4rem 2rem; align-items: center">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 2rem; text-align: center">
+    Preguntas frecuentes (FAQ)
+  </h2>
+
+  <mat-accordion multi style="max-width: 800px; margin: 0 auto;font-size: 1rem; display: block">
+
+    <!-- Pregunta 1 -->
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">¿Puedo usarlo sin seguidores?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Sí, Kreatiu está pensado para ayudarte a crecer desde 0. Nuestras herramientas te proporcionan la estructura y el soporte necesarios para comenzar a crear contenido valioso, independientemente del tamaño de tu audiencia actual.
+      </p>
+    </mat-expansion-panel>
+
+    <!-- Pregunta 2 -->
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">¿Me obliga a publicar cada día?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        No, tú eliges tu ritmo. Nosotros solo te damos orden y soporte. Kreatiu está diseñado para adaptarse a tu calendario y necesidades, permitiéndote establecer la frecuencia de publicación que mejor funcione para ti.
+      </p>
+    </mat-expansion-panel>
+
+    <!-- Pregunta 3 -->
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">¿La IA escribe mis posts?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        No si no quieres. Kreatiu te da ideas, estructura y apoyo. Tú decides hasta qué punto quieres utilizar las sugerencias generadas por IA. Siempre mantienes el control creativo sobre tu contenido.
+      </p>
+    </mat-expansion-panel>
+
+    <!-- Pregunta 4 -->
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">¿Cuándo cobro por los referidos?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Cada mes, sin mínimos. Una vez que tus referidos se unen a la plataforma, empiezas a ganar comisiones que se pagan mensualmente, sin importar la cantidad.
+      </p>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+<div class="container" style="
+  background-color: #001970;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+">
+
+  <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">
+    No necesitas ser famoso. Solo necesitas constancia.
+  </h2>
+
+  <p style="font-size: 1rem; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">
+    Empieza a publicar mejor, más fácil y con sentido. Haz que tu contenido trabaje por ti.
+  </p>
+
+  <button class="cta-button" style="display: flex; align-items: center; gap: 0.5rem;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/1024px-Google_Favicon_2025.svg.png"
+      alt="Google" class="google-icon" style="width: 20px; height: 20px;" />
+    Entrar gratis con Google
+  </button>
+
+  <p class="little-text" style="font-size: 0.85rem; margin-top: 1.5rem; color: #ffffffcc;">
+    Tu cuenta, tu ritmo. Nosotros ponemos las herramientas.
+  </p>
+
+</div>
+
+
+<app-footer></app-footer>

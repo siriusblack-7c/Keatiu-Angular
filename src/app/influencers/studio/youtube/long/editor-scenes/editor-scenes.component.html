@@ -1,0 +1,96 @@
+<mat-card class="main-container">
+  <h1>Edita las escenas del vídeo</h1>
+  <mat-card-subtitle>Cada escena representa un fragmento del contenido que verán los espectadores. Aquí puedes revisar y
+    ajustar lo que se contará en cada una.
+  </mat-card-subtitle>
+
+  <div *ngIf="this.loadingLongVideo">
+    <mat-spinner style="margin:0 auto;" class="loading-spinner" color="accent"></mat-spinner>
+    <small>Estamos decidiendo la estructura del vídeo...</small>
+  </div>
+  <div *ngIf="!this.loadingLongVideo">
+
+    <h3 class="video-title">Vídeo: {{ videoTitle }}</h3>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        Título de la escena
+        <mat-icon
+          matTooltip="Es el título que se mostrará en la lista de escenas. Debe ser breve y descriptivo.">
+          help_outline
+        </mat-icon>
+      </mat-label>
+      <input matInput (ngModelChange)="onModelUpdate(selectedScene)" [(ngModel)]="selectedScene.title"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        Descripción de la escena
+        <mat-icon
+          matTooltip="Edita el vídeo conceptualmente. Esto genera una mejor calidad de guion y una mejor experiencia para el espectador que los guiones improvisados.">
+          help_outline
+        </mat-icon>
+      </mat-label>
+      <textarea style="font-size: 1.4rem" matInput rows="8" (ngModelChange)="onModelUpdate(selectedScene)" [(ngModel)]="selectedScene.text"></textarea>
+    </mat-form-field>
+
+    <!-- First sentence -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        Primera frase de la escena
+        <mat-icon
+          matTooltip="Es la primera frase que se dirá en la escena. Está correlacionada con la última frase de la escena anterior.">
+          help_outline
+        </mat-icon>
+      </mat-label>
+      <input matInput (ngModelChange)="onModelUpdate(selectedScene)" [(ngModel)]="selectedScene.firstSentence"/>
+    </mat-form-field>
+
+    <!-- Last sentence -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        Última frase de la escena
+        <mat-icon
+          matTooltip="Para asegurar la fluidez del guion, es importante que la última frase de una escena esté relacionada con la primera frase de la siguiente.">
+          help_outline
+        </mat-icon>
+      </mat-label>
+      <input matInput (ngModelChange)="onModelUpdate(selectedScene)" [(ngModel)]="selectedScene.lastSentence"/>
+    </mat-form-field>
+
+    <div class="scene-nav-controls">
+      <button mat-icon-button (click)="previousScene()" [disabled]="selectedIndex === 0">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <span>{{ selectedIndex + 1 }} / {{ scenes.length }}</span>
+      <button mat-icon-button (click)="nextScene()" [disabled]="selectedIndex === scenes.length - 1">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <div class="generate-script-container">
+      <mat-spinner *ngIf="loadingScriptGeneration" class="loading-spinner" color="accent"></mat-spinner>
+
+      <button (click)="generateScript()" mat-raised-button color="accent" *ngIf="!loadingScriptGeneration">
+        <mat-icon>description</mat-icon>
+        Generar guion completo
+      </button>
+    </div>
+  </div>
+</mat-card>
+
+<!-- Panel lateral fijo -->
+<mat-card class="scene-list-panel" *ngIf="!loadingLongVideo">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Escenas del vídeo
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let scene of scenes; let i = index" (click)="selectScene(i)">
+        <span>{{ i + 1 }}. {{ scene.title || 'Escena sin título' }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</mat-card>

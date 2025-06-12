@@ -1,0 +1,573 @@
+<script>console.log("hi hic new console", 123)</script>
+
+<mat-toolbar color="primary" class="navbar">
+  
+  
+  <img routerLink="/" src="/assets/logo_horizontal_influencers.png" alt="Kreatiu Logo" class="logo-image">
+
+  <a style="text-decoration: none; color: white; "   class="nav-right-flag" href="/es">
+    <div matTooltip="Español" style="
+  width: 48px;
+  height: 32px;
+  background: linear-gradient(
+    to bottom,
+    #aa151b 0%,
+    #aa151b 33%,
+    #f1bf00 33%,
+    #f1bf00 66%,
+    #aa151b 66%,
+    #aa151b 100%
+  );
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+"></div>
+  </a>
+
+  <a style="text-decoration: none; color: white; padding: 5px" class="nav-right-flag" href="/cat">
+    <div matTooltip="Català" style="
+  width: 48px;
+  height: 32px;
+  background: linear-gradient(
+    to bottom,
+    #fcdd09 0%,
+    #c60c30 20%,
+    #fcdd09 30%,
+    #c60c30 40%,
+    #fcdd09 50%,
+    #c60c30 60%,
+    #fcdd09 70%,
+    #c60c30 80%,
+    #fcdd09 100%
+  );
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+"></div>
+  </a>
+
+
+
+
+  <!-- <span class="spacer"></span> -->
+
+  <nav class=" wide-nav" >
+    <div mat-button (click)="startWithGoogle()" style="display: none !important;" matTooltip="Create YouTube videos with AI">AI Videos</div>
+    <a mat-button (click)="startWithGoogle()"   matTooltip="Record and edit your video scripts in the browser">Online
+      Editor</a>
+    <a mat-button (click)="startWithGoogle()"   matTooltip="Automatic subtitles with AI">Automatic Subtitles</a>
+    <a mat-button (click)="startWithGoogle()"   matTooltip="Content calendar for social media">Content Calendar</a>
+  </nav>
+
+
+  <nav class=" narrow-nav" style="justify-content: center; display: flex;">
+    <select mat-button  style="border: none; margin-left: 1rem; background-color: rgba(0,0,0,0.3);  outline: none;  color: white;  padding: 10px 5px; border-radius: 10px;"   matTooltip="View the more" >
+    <option mat-button  matTooltip="Create YouTube videos with AI">HOME</option>
+      <option mat-button  >
+        <div mat-button (click)="startWithGoogle()" style="display: none !important;" matTooltip="Create YouTube videos with AI">
+          AI Videos
+        </div>
+      </option>
+      <option mat-button   >
+        <a mat-button (click)="startWithGoogle()"   matTooltip="Record and edit your video scripts in the browser">
+          Online Editor
+        </a>
+      </option>
+      <option mat-button   >
+        <a (click)="startWithGoogle()"   matTooltip="Automatic subtitles with AI">
+          Automatic Subtitles
+        </a>
+      </option>
+      <option mat-button   >
+        <a mat-button (click)="startWithGoogle()"   matTooltip="Content calendar for social media">
+          Content Calendar
+        </a>
+      </option>
+    </select>
+  </nav>
+ 
+
+  
+
+
+  <button mat-flat-button color="accent" style="position: absolute; z-index: 99; top: 70px; right: 20px;" class="register-button  cta"  (click)="startWithGoogle()">
+    <span>🚀Start for free with Google</span>
+  </button>
+  
+
+</mat-toolbar>
+<div class="container container-first">
+
+  <h1 class="main-title">KREATIU INFLUENCERS</h1>
+  <p class="subtitle">
+    Your cloud content studio.<br/>
+    Plan, record, and publish videos for YouTube, Instagram, and TikTok right from your browser.
+  </p>
+
+  <section class="benefits">
+    <div class="benefit">
+      <h2>Unblocked Ideas</h2>
+      <p>Get ideas for your videos and shorts in seconds, tailored to your audience and style.</p>
+    </div>
+
+    <div class="benefit">
+      <h2>Engaging Content</h2>
+      <p>Generate scripts, thumbnails, subtitles, and the first comment with the help of AI.</p>
+    </div>
+
+    <div class="benefit">
+      <h2 class="highlight">Record with teleprompter or generate AI voice</h2>
+      <p>Read your scripts directly on screen while recording without leaving your browser.</p>
+    </div>
+
+    <div class="benefit">
+      <h2>Organize Your Content</h2>
+      <p>Plan and schedule posts to maintain consistency effortlessly.</p>
+    </div>
+  </section>
+
+  <div>
+    <button class="cta-button" (click)="startWithGoogle()">
+      <mat-icon class="login-icon">login</mat-icon>
+      Start for free with Google
+    </button>
+
+    <button class="explore-button" (click)="scrollToHowItWorks()">
+      See how it works
+    </button>
+  </div>
+  <p class="little-text">One click, one video.</p>
+
+  <div *ngIf="!isOnCTA" class="scroll-indicator" [ngClass]="{ 'reverse': isNearBottom }" (click)="scrollDown()">
+    <div class="arrow-wrapper">
+      <div class="arrow"></div>
+    </div>
+    <div class="arrow-wrapper second">
+      <div class="arrow"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container container-second">
+
+  <section class="feature-grid">
+    <h2 class="feature-title">
+      Everything you need to be consistent and profitable on social media
+    </h2>
+
+    <div class="row">
+      <div class="column">
+        <h3>Plan your content</h3>
+        <img src="/assets/kreatiu/website/home/calendar_home.png" alt="Plan your content"
+             class="feature-image">
+      </div>
+      <div class="column">
+        <h3>AI tells you what videos to make.</h3>
+        <img src="/assets/kreatiu/website/home/ai_content_home.png" alt="AI tells you what videos to make"
+             class="feature-image">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <h3>AI generates the script, you just review.</h3>
+        <img src="/assets/kreatiu/website/home/script_ai_home.png" alt="AI generates the script, you just review"
+             class="feature-image">
+      </div>
+      <div class="column">
+        <h3>Record your voice and video with the teleprompter</h3>
+        <img src="/assets/kreatiu/website/home/record_home.png" alt="Record your voice and video with the teleprompter"
+             class="feature-image">
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<div class="container container-third">
+  <section id="how-it-works">
+    <h2 class="section-title">How does it work?</h2>
+
+    <div class="columns">
+      <div class="column">
+        <h3>Create a video in one click</h3>
+        <p>If you need Shorts, Reels, and quick videos, let AI do 100% of the work.</p>
+        <p>Videos with subtitles, images, and AI-generated audio.</p>
+        <p class="punchline">One click, one video.</p>
+      </div>
+
+      <div class="column">
+        <h3>Create your script and record it with the teleprompter</h3>
+        <p>If you're selling your image, create your scripts using AI, review them, and record videos directly from your
+          browser.</p>
+        <p>In addition to the script, we generate the title, thumbnail, and video description so your content ranks
+          well.</p>
+        <p>Oversee and edit the generated content.</p>
+        <p class="punchline">Gain production speed without sacrificing quality.</p>
+      </div>
+    </div>
+
+    <div>
+      <button class="cta-button" (click)="startWithGoogle()">
+        <mat-icon class="login-icon">login</mat-icon>
+        Try it and discover how it works
+      </button>
+      <p class="little-text">Learn how Kreatiu Influencers works in less than 3 minutes.</p>
+
+    </div>
+  </section>
+
+
+</div>
+
+<div class="container" style="padding-top: 100px !important;">
+
+  <h2 style="text-align: center">Meet the team behind Kreatiu</h2>
+  <section style="max-width: 1200px; margin: 1rem auto;">
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+      <mat-card
+        style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
+        <img src="/assets/kreatiu/website/home/aina.png" alt="Aina Roma"
+             style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+        <mat-card-header>
+          <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CEO - Aina Roma</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <small>
+            "Your dreams are more important than money."
+          </small>
+        </mat-card-content>
+      </mat-card>
+      <mat-card
+        style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
+        <img src="/assets/kreatiu/website/home/hans.png" alt="Hans Castro"
+             style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+        <mat-card-header>
+          <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CTO - Hans Castro</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <small>
+            "They forced me to be CTO."
+          </small>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </section>
+  <h2 style="text-align: center; margin-bottom: 1rem;">Our Mission: Your Success</h2>
+  <section style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <p>
+      Our mission is for you to monetize your content and <strong style="text-decoration: underline">live from what you
+      love to do</strong>.
+    </p>
+  </section>
+</div>
+
+<div class="container" style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center;">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
+    Influencers and entrepreneurs who already trust Kreatiu
+  </h2>
+
+  <div
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto 3rem;">
+    <div
+      style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"I almost lost my YouTube channel for not being consistent. Kreatiu saved my
+        channel."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div
+          style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          E
+        </div>
+        <div>
+          <div style="font-weight: bold;">El Hacker Riojano</div>
+          <div style="font-size: 0.85rem; color: gray;">Ethical Hacking YouTuber</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"Now I can create quality content that reaches my audience. I never run out of
+        ideas with Kreatiu."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div
+          style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          A
+        </div>
+        <div>
+          <div style="font-weight: bold;">Autista Anómino</div>
+          <div style="font-size: 0.85rem; color: gray;">Influencer on Twitter X</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
+      <p style="font-style: italic;">"Kreatiu is revolutionizing digital marketing."</p>
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <div
+          style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
+          T
+        </div>
+        <div>
+          <div style="font-weight: bold;">
+            <a target="_blank"
+               href="https://tinku.es/kreatiu-gestion-automatizada-de-contenido-para-redes-sociales-con-ia/">Tinku
+              TV</a>
+          </div>
+          <div style="font-size: 0.85rem; color: gray;">Communication medium focused on the business world</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="avatar-arrange-stage" >
+    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1"
+         style="width: 48px; height: 48px; border-radius: 50%;"/>
+    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2"
+         style="width: 48px; height: 48px; border-radius: 50%;"/>
+    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3"
+         style="width: 48px; height: 48px; border-radius: 50%;"/>
+    <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User 4"
+         style="width: 48px; height: 48px; border-radius: 50%;"/>
+    <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User 5"
+         style="width: 48px; height: 48px; border-radius: 50%;"/>
+  </div>
+
+  <p style="font-size: 0.9rem; color: #ccc;">
+    And thousands of other creators who are growing their community
+  </p>
+
+</div>
+
+<div class="container"
+     style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
+    Kreatiu Influencers is free.
+  </h2>
+
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1rem;
+  ">
+
+    <div style="
+      background-color: white;
+      color: black;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 300px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    ">
+      <div>
+        <div
+          style="background-color: #e8f5e9; color: #388e3c; font-size: 0.9rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 999px; display: inline-block; margin-bottom: 1rem;">
+          🟢 Basic
+        </div>
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Influencer</h3>
+        <div style="font-size: 2rem; font-weight: bold;">0 €<span
+          style="font-size: 1rem; font-weight: normal;">/month</span></div>
+        <p style="margin: 1rem 0; color: #555;">Take the first step</p>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li>✅ Access to the basic calendar</li>
+          <li>✅ Script generation</li>
+          <li>✅ Access to the Teleprompter</li>
+        </ul>
+      </div>
+      <button (click)="startWithGoogle()" style="
+        margin-top: 2rem;
+        padding: 0.75rem;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+      ">Start for free
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" style="background-color: #001970; color: white; padding: 4rem 2rem; align-items: center">
+
+  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 2rem; text-align: center">
+    Frequently Asked Questions (FAQ)
+  </h2>
+
+  <mat-accordion multi style="max-width: 800px; margin: 0 auto;font-size: 1rem; display: block">
+
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">1. What is Kreatiu Influencers?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Kreatiu Influencers is the AI-powered platform that helps you consistently create quality video content, no
+        matter your experience level. We offer tools like AI script generation, an integrated teleprompter, and a
+        content calendar so you can grow on social media and monetize your passion.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">2. Is Kreatiu free?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Yes, Kreatiu offers a free basic plan that allows you to start creating at no cost. With this plan, you have
+        access to essential features so you can experience the power of AI in your content.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">3. What does Kreatiu's free plan include?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Kreatiu's free plan includes access to a basic calendar for planning your content, AI script generation (with
+        possible usage limitations), and the ability to record your videos using our web teleprompter. You'll also be
+        able to export a limited number of videos per month.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">4. What types of creators can use Kreatiu?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Kreatiu is designed for all types of creators: from those looking to generate massive and fast videos with a
+        single click thanks to AI, to professionals who want to perfect their personal brand with impeccable scripts and
+        high-quality teleprompter recordings. We want to help you be consistent, professional, and profitable.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">5. Do I need previous experience to use Kreatiu?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        No, Kreatiu is designed to be intuitive and easy to use, regardless of your experience level. Our AI tools
+        simplify the content creation process, allowing you to focus on your ideas.
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">6. How does Kreatiu help me monetize my content?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Our mission is for you to monetize your content and live from what you love to do. Kreatiu provides you with the
+        tools to produce high-quality content consistently, which helps you grow your audience, increase engagement, and
+        ultimately open up more monetization opportunities.
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">7. What is Kreatiu's teleprompter and how does it work?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Our teleprompter is an integrated tool that allows you to read your script while recording the video directly
+        from your browser. This ensures your message is fluid and professional, without the need to memorize texts.
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">8. Does Kreatiu's AI automatically create videos?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Kreatiu's AI helps you generate content ideas and scripts. For video creation, you can use these tools to
+        produce massive videos with AI in one click, or record your own videos with our teleprompter using the generated
+        scripts.
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">9. Does Kreatiu help me organize my content?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Yes, Kreatiu includes a content calendar that helps you plan and organize your publications efficiently,
+        ensuring you maintain consistency on your social networks.
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold;">10. How can I start using Kreatiu?</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p style="padding: 1rem;">
+        Simply <a href="#" (click)="startWithGoogle()">Click here</a> and let us guide you through the account creation
+        process. With just one click, you can start exploring all the tools Kreatiu has to offer.
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div class="container container-confidence" style="
+  background-color: #001970;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+">
+
+  <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">
+    You don't need to be famous. You just need consistency.
+  </h2>
+
+  <p style="font-size: 1rem; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">
+    Start publishing better, easier, and with purpose. Make your content work for you.
+  </p>
+
+  <button class="cta-button" (click)="startWithGoogle()">
+    <mat-icon class="login-icon">login</mat-icon>
+    Start for free with Google
+  </button>
+
+  <p class="little-text" style="font-size: 0.85rem; margin-top: 1.5rem; color: #ffffffcc;">
+    Your account, your pace. We provide the tools.
+  </p>
+
+</div>
+
+
+<mat-toolbar color="primary" class="footer-toolbar" role="contentinfo">
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <p>&copy; 2025 Kreatiu CAT SL — {{ 'HOME_ALL_RIGHTS' | translate }}</p>
+    </div>
+
+    <div class="footer-center">
+      <a mat-button routerLink="/legal/politica-de-privacidad"
+         target="_blank">{{ 'HOME_PRIVACY_POLICY' | translate }}</a>
+      <a mat-button routerLink="/legal/cookies" target="_blank">Cookies</a>
+      <a mat-button routerLink="/legal/aviso-legal" target="_blank">{{ 'HOME_TERMS_CONDITIONS' | translate }}</a>
+      <a mat-button href="#">{{ 'HOME_CONTACT' | translate }}</a>
+    </div>
+
+    <div class="footer-right">
+      <span>🌍</span>
+      <a mat-button routerLink="/es" href="/es" hreflang="es" class="lang">ES</a>
+      <a mat-button routerLink="/en" href="/en" hreflang="en" class="lang">EN</a>
+      <a mat-button routerLink="/cat" href="/cat" hreflang="ca" class="lang">CAT</a>
+    </div>
+  </div>
+
+</mat-toolbar>

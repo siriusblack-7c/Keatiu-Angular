@@ -1,0 +1,96 @@
+.background {
+  background: linear-gradient(175deg, rgb(245, 157, 45), rgb(48, 63, 159));
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+mat-card-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #303f9f;
+  text-align: center;
+}
+
+mat-card-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.icon {
+  font-size: 2em;
+  color: #303f9f;
+  margin-right: 10px;
+}
+
+mat-card-actions {
+  text-align: right;
+}
+
+button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3f51b5;
+}
+
+mat-icon {
+  overflow: visible;
+  margin: 10px;
+}
+
+.start-button {
+  margin: 10px auto;
+}
+
+button {
+  margin: 0 10px;
+}

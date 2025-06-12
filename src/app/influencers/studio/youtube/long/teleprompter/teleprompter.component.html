@@ -1,0 +1,128 @@
+<mat-toolbar color="primary" class="toolbar" *ngIf="false">
+  <button mat-icon-button (click)="togglePlay()">
+    <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="toggleFullscreen()">
+    <mat-icon>fullscreen</mat-icon>
+  </button>
+
+  <mat-form-field appearance="outline" class="control">
+    <mat-label>Velocidad (px/s)</mat-label>
+    <input matInput type="number" [(ngModel)]="speed">
+    <mat-icon matSuffix>speed</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="control">
+    <mat-label>Tamaño fuente</mat-label>
+    <input matInput type="number" [(ngModel)]="fontSize">
+    <mat-icon matSuffix>format_size</mat-icon>
+  </mat-form-field>
+
+  <button mat-button color="warn" (click)="stop()">STOP</button>
+
+  <mat-checkbox [(ngModel)]="recordAudio">Grabar Audio</mat-checkbox>
+  <mat-checkbox [(ngModel)]="recordVideo">Grabar Video</mat-checkbox>
+
+  <span class="time">
+    {{ formatTime(elapsedTime) }} / {{ formatTime(totalTime) }}
+  </span>
+</mat-toolbar>
+
+<div class="prompter-container" #scrollContainer>
+  <div class="prompter-text" [ngStyle]="{'font-size.px': fontSize}" [innerText]="text"></div>
+</div>
+
+<video
+  #videoPreview
+  class="video-preview"
+    [class.hidden]="videoHidden"
+  [class.visible]="!videoHidden"
+  (click)="toggleVideoPosition()"
+  [class.active-speaking]="isSpeaking"
+  autoplay
+  muted playsinline>
+</video>
+
+
+<div class="teleprompter-controls-footer">
+  <div class="logo-section">
+    <img routerLink="/es" style="cursor: pointer" matTooltip="Crea guiones para tus vídeos de YouTube" src="/assets/logo_horizontal_influencers.png" alt="Kreatiu Logo" class="kreatiu-logo">
+  </div>
+
+  <div class="center-controls">
+    <button mat-fab class="control-button" color="primary" (click)="togglePlay()">
+      <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+      <mat-icon *ngIf="isPlaying">pause</mat-icon>
+    </button>
+
+    <button [disabled]="elapsedTime == 0" mat-fab color="" matTooltip="Detener vídeo" class="control-button stop-button" (click)="stop()">
+      <mat-icon>stop</mat-icon>
+    </button>
+
+    <button
+      [disabled]="isPlaying"
+      mat-fab class="control-button" [color]="recordVideo ? 'primary' : 'warn'" matTooltip="Desactivar/Activar cámara" (click)="toggleRecordVideo()">
+      <mat-icon *ngIf="!recordVideo">videocam_off</mat-icon>
+      <mat-icon *ngIf="recordVideo">videocam</mat-icon>
+    </button>
+
+    <button
+      [disabled]="isPlaying"
+      mat-fab class="control-button" [color]="recordAudio ? 'primary' : 'warn'"  matTooltip="Desactivar/Activar micrófono" (click)="toggleRecordAudio()">
+      <mat-icon *ngIf="!recordAudio">mic_off</mat-icon>
+      <mat-icon *ngIf="recordAudio">mic</mat-icon>
+    </button>
+
+  </div>
+
+  <div class="right-controls">
+    <mat-form-field appearance="outline" class="reading-mode-select" style="margin-top: 20px;">
+      <mat-label style="color: #ffcc80">Velocidad de lectura</mat-label>
+      <mat-select [value]="'slow'" style="color: #ffcc80" (selectionChange)="onChangeReadingMode($event)">
+        <mat-option value="slow">Canal de Ciencia</mat-option>
+        <mat-option value="standard">YouTuber</mat-option>
+        <mat-option value="fast">Presentadora de TV</mat-option>
+<!--        <mat-option value="custom">Personalizado</mat-option>-->
+      </mat-select>
+    </mat-form-field>
+
+    <div class="time-display">
+      <span>{{ formatTime(elapsedTime) }} / {{ formatTime(totalTime) }}</span>
+    </div>
+
+    <button mat-fab class="control-button" color="primary" (click)="toggleFullscreen()" matTooltip="Pantalla completa">
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+  </div>
+
+  <!--  <div class="right-controls">-->
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>add</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>format_size</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>remove</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>add</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>speed</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <button mat-mini-fab class="control-button" color="primary">-->
+  <!--      <mat-icon>remove</mat-icon>-->
+  <!--    </button>-->
+
+  <!--    <div class="time-display">-->
+  <!--      <span>00:00:00 / 00:05:00</span>-->
+  <!--    </div>-->
+  <!--  </div>-->
+</div>

@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Nueva Tarea</h2>
+<mat-dialog-content>
+  <form #taskForm="ngForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Tarea</mat-label>
+      <input placeholder="Crear contenido para mañana" matInput [(ngModel)]="task.title" name="title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea placeholder="Crear 2 shorts y publicarlos en YouTube, TikTok y Reels Instagram" matInput [(ngModel)]="task.description" name="description" rows="4"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="task.scheduledDate" name="scheduledDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+<!--  <button mat-button [mat-dialog-close]="">Cancelar</button>-->
+  <button mat-raised-button color="primary" [mat-dialog-close]="task" [disabled]="!taskForm.form.valid">
+    Guardar
+  </button>
+</mat-dialog-actions>

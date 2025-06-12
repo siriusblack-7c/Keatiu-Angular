@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: #1a237e;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header img {
+  height: 50px;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1a237e;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #f57c00;
+}
+
+
+.lang-select {
+  display: flex;
+  align-items: center;
+}
+
+.lang-select select {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 16px;
+  color: #1a237e;
+  border: 1px solid #1a237e;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.section {
+  padding: 20px;
+}
+
+.section h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.section h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.aina-interview {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+.aina-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.aina-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.btn {
+  display: block;
+  margin: 1em auto;
+  padding: 1em 2em;
+  background-color: #1a237e;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 60%;
+  text-align: center;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-open nav {
+    display: flex;
+  }
+
+  .section h1 {
+    font-size: 1.5em;
+  }
+
+  .section h2 {
+    font-size: 1.2em;
+  }
+
+  .aina-interview {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .aina-image {
+    margin: 0 0 10px 0;
+  }
+
+  .aina-text {
+    text-align: center;
+  }
+}
+
+.how-it-works-image {
+  max-width: 100%;
+}

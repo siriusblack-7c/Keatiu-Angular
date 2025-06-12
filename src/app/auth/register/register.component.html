@@ -1,0 +1,57 @@
+<app-header-authenticated></app-header-authenticated>
+<div class="background">
+  <div>
+    <img src="/assets/logo_full.png"
+         style="width: 80%; max-width: 600px; height: auto; display: block; border-radius: 4px;padding-top: 5vh;margin: 0 auto">
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
+    <mat-card style="width: 90%; max-width: 500px; margin: auto; padding: 20px;">
+      <div class="aina-interview">
+        <img src="/assets/kreatiu/aina_cut_small.png" alt="Aina Roma" class="aina-image">
+        <div class="aina-text" id="animated-text">
+          <p>{{ 'REGISTER_TIME' | translate }}</p>
+        </div>
+      </div>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>
+            {{ 'REGISTER_EMAIL' | translate }}
+          </mat-label>
+          <input matInput #emailField="ngModel" placeholder="{{ 'REGISTER_YOUR_EMAIL' | translate }}"
+                 autocomplete="email"
+                 type="email"
+                 [(ngModel)]="email" name="email" required>
+          <mat-error *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+            {{ 'REGISTER_EMAIL_INVALID' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox #termsCheckbox name="terms" required style="margin: 25px 0">
+          {{ 'REGISTER_ACCEPT_TERMS' | translate }}
+          <a href="/legal/politica-de-privacidad" target="_blank">{{ 'PRIVACY_POLICY' | translate }}</a>.
+        </mat-checkbox>
+
+
+        <mat-error *ngIf="error.length > 0">{{ error | translate }}</mat-error>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          style="width: 100%"
+          [disabled]="!registerForm.valid || !termsCheckbox.checked"
+        >
+          {{ 'REGISTER' | translate }}
+        </button>
+      </form>
+
+      <div style="text-align: center; padding-top: 20px;">
+        <a href="/login" mat-button>
+          {{ 'REGISTER_HAVE_ACCOUNT' | translate }}
+        </a>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<app-footer></app-footer>

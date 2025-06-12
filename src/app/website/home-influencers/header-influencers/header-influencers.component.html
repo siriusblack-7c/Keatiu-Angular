@@ -1,0 +1,38 @@
+<!--<section>-->
+<!--  <header>-->
+<!--    -->
+
+
+<!--  </header>-->
+<!--</section>-->
+
+<mat-toolbar color="primary" class="navbar">
+<!--  <span class="logo">Kreatiu</span>-->
+  <img [routerLink]="'/' + this.language.replace('ca', '')" src="/assets/logo_horizontal.jpg" alt="Kreatiu Logo" style="width: 134px; height: 50px; cursor: pointer">
+
+  <span class="spacer"></span>
+
+  <nav class="nav-links">
+    <a mat-button>Características</a>
+    <a mat-button>Precios</a>
+    <a mat-button>Academia</a>
+    <a mat-button>Blog</a>
+  </nav>
+
+  <button mat-raised-button color="accent" class="register-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/1024px-Google_Favicon_2025.svg.png" alt="Google" class="google-icon" />
+    Registrarse
+  </button>
+</mat-toolbar>
+
+    <!--    <div class="menu-icon" (click)="toggleNav()">&#9776;</div>-->
+<!--    <nav [style.display]="navOpen ? 'flex' : ''">-->
+<!--    </nav>-->
+<!--    <div class="lang-select">-->
+<!--      <label for="language-select">{{ 'HOME_LANGUAGE' | translate }}</label>-->
+<!--      <select id="language-select" [(ngModel)]="language" (change)="changeLanguage()">-->
+<!--        <option value="es"><a href="/es">Español</a></option>-->
+<!--        <option value="ca"><a href="/ca">Català</a></option>-->
+<!--        <option value="en"><a href="/en">English</a></option>-->
+<!--      </select>-->
+<!--    </div>-->

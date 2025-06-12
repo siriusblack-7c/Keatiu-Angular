@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f59d2d;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header img {
+  height: 50px;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1a237e;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #f57c00;
+}
+

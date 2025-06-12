@@ -1,0 +1,45 @@
+<app-header-authenticated></app-header-authenticated>
+
+<div class="background">
+  <div class="logo-container">
+    <img src="/assets/logo_full.png" alt="Kreatiu Logo" class="logo">
+  </div>
+  <mat-card class="welcome-card">
+    <div class="aina-interview">
+      <img src="/assets/kreatiu/aina_cut_small.png" alt="Aina Roma" class="aina-image">
+      <div class="aina-text" id="animated-text">
+        <p>{{ displayedText }}</p>
+      </div>
+    </div>
+    <div class="subscription-plans">
+
+      <mat-card class="subscription-card" *ngFor="let plan of plans">
+        <mat-card-header>
+          <mat-card-title>{{ plan.slogan | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="plan">
+            <h3>{{ plan.name | translate }}</h3>
+            <ul>
+              <li *ngFor="let advantage of plan.advantages">{{ advantage | translate }}<hr/></li>
+            </ul>
+            <p><strong>{{ plan.price | currency:'EUR' }} / m</strong></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="pay(plan.priceCode)" style="padding: 20px 5px 20px 5px;" mat-raised-button color="primary">{{ 'ONBOARDING_SUBSCRIBE_STRIPE_CARD' | translate }}</button>
+        </mat-card-actions>
+        <div style="text-align: right; padding: 0 20px 10px;">
+        </div>
+      </mat-card>
+
+    </div>
+    <div class="contact-us">
+      <h4>{{ 'ONBOARDING_SUBSCRIBE_CONTACT_US' | translate }}</h4>
+      <p>{{ 'ONBOARDING_SUBSCRIBE_CONTACT_EMAIL' | translate }}:
+        <a href="mailto:empresa@kreatiu.cat">empresa&#64;kreatiu.cat</a>
+      </p>
+    </div>
+  </mat-card>
+</div>
+<app-footer></app-footer>

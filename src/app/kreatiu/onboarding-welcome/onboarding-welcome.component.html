@@ -1,0 +1,32 @@
+<app-header-authenticated></app-header-authenticated>
+
+<div class="background">
+  <div class="logo-container">
+    <img src="/assets/logo_full.png" alt="Kreatiu Logo" class="logo">
+  </div>
+  <mat-card class="welcome-card">
+    <mat-card-title>{{'ONBOARDING_WELCOME_TITLE' | translate}}</mat-card-title>
+    <mat-card-content>
+      <div class="content-item">
+        <mat-icon class="icon">send</mat-icon>
+        <p>{{'ONBOARDING_WELCOME_DAILY_CONTENT' | translate}}</p>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="content-item">
+        <img src="/assets/kreatiu/aina_cut_small.png" alt="Aina Roma" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; float: left; margin-top: 5px; margin-bottom: 5px;"/>
+        <p>{{'ONBOARDING_WELCOME_AINA_INTERVIEW' | translate}}</p>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="content-item">
+        <mat-icon class="icon">trending_up</mat-icon>
+        <p>{{'ONBOARDING_WELCOME_FIRST_PROMOTION' | translate}}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="secondary" class="start-button" (click)="goToPanel()">{{'ONBOARDING_WELCOME_GO_TO_PANEL' | translate}}</button>
+      <button mat-raised-button color="primary" class="start-button" (click)="startInterview()">{{'ONBOARDING_WELCOME_START_INTERVIEW' | translate}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

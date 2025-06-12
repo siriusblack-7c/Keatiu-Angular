@@ -1,0 +1,104 @@
+<mat-sidenav-container class="agenda-container">
+  <mat-sidenav mode="side" opened class="agenda-sidenav">
+    <div class="sidenav-content">
+      <mat-nav-list>
+        <mat-list-item><span>Agenda</span></mat-list-item>
+        <mat-list-item><span>Formación</span></mat-list-item>
+        <mat-list-item><span>Afiliados</span></mat-list-item>
+      </mat-nav-list>
+    </div>
+    <button mat-raised-button class="upgrade-button" color="accent">Mejora tu plan</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="agenda-toolbar">
+      <img src="assets/logo_horizontal_influencers.png" alt="Logo" class="logo" style="height: 40px;">
+    </mat-toolbar>
+
+    <div class="agenda-content">
+      <section class="agenda-main">
+        <h2>AGENDA</h2>
+
+        <div class="agenda-top">
+          <mat-card class="calendar-card">
+            <mat-form-field appearance="fill">
+              <mat-label>Selecciona fecha</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate"/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+
+            <!-- buton for today -->
+            <button mat-raised-button color="accent" (click)="today()">Hoy</button>
+          </mat-card>
+          <mat-card class="week-days" style="flex: 1; display: flex; flex-direction: column;">
+            <mat-grid-list cols="7" rowHeight="fit" gutterSize="1px" style="flex: 1; height: 100%;">
+              <mat-grid-tile *ngFor="let day of days; let i=index" [ngClass]="{'today': false}" style="padding: 0;">
+                <div
+                  style="display: flex; flex-direction: column; padding: 8px; height: 100%; box-sizing: border-box; flex:1; border-right: 1px solid rgba(0, 0, 0, 0.1);">
+
+                  <div
+                    style="font-weight: bold; text-align: center; padding: 0.25rem 0; background: {{ i === 1 ? '#ffab40' : '#f5f5f5' }}; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1); border-radius: 4px;">
+                    {{ day }} {{ 1+i }}
+                  </div>
+                  <mat-divider></mat-divider>
+
+                  <div style="flex: 1; overflow-y: auto; margin-top: 8px;">
+                    <mat-card *ngFor="let item of [1, 2]"
+                              style="margin-bottom: 6px; padding: 6px 8px; font-size: 0.85rem;">
+                      <mat-icon style="font-size: 16px; vertical-align: middle;">push_pin</mat-icon>
+                      Evento {{ item }}
+                    </mat-card>
+                  </div>
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+
+
+        </div>
+
+        <div class="agenda-today">
+          <h3>Hoy (00-00-0000)</h3>
+          <div style="text-align: center">
+            <p>No tienes nada programado para este día.</p>
+            <button mat-raised-button color="primary" routerLink="/influencers/studio/youtube/long">Crear contenido</button>
+          </div>
+<!--          <mat-card class="today-card">-->
+<!--            &lt;!&ndash; contenido del día &ndash;&gt;-->
+<!--            <div class="actions">-->
+<!--              <button mat-icon-button color="primary">-->
+<!--                <mat-icon>edit</mat-icon>-->
+<!--              </button>-->
+<!--              <button mat-icon-button color="warn">-->
+<!--                <mat-icon>clear</mat-icon>-->
+<!--              </button>-->
+<!--              <button mat-icon-button color="accent">-->
+<!--                <mat-icon>check</mat-icon>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </mat-card>-->
+        </div>
+      </section>
+    </div>
+
+    <button mat-fab [matMenuTriggerFor]="fabMenu" class="fab-button" aria-label="Más acciones">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <mat-menu #fabMenu="matMenu">
+      <button mat-menu-item (click)="openTaskDialog()">
+        <mat-icon>event</mat-icon>
+        <span>Programar tarea</span>
+      </button>
+      <button mat-menu-item routerLink="/influencers/studio/youtube/long">
+      <mat-icon>edit</mat-icon>
+        <span>Crear contenido</span>
+      </button>
+    </mat-menu>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

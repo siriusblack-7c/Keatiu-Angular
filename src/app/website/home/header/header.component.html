@@ -1,0 +1,24 @@
+<section>
+  <header>
+    <img [routerLink]="'/' + this.language.replace('ca', '')" src="/assets/logo_horizontal.jpg" alt="Kreatiu Logo" style="width: 134px; height: 50px; cursor: pointer">
+    <div class="menu-icon" (click)="toggleNav()">&#9776;</div>
+    <nav [style.display]="navOpen ? 'flex' : ''">
+      <a [href]="this.getLinkUrl('how-it-works')">{{ 'HOME_HOW_IT_WORKS' | translate }}</a>
+<!--      <a href="#">{{ 'Soc empresa' | translate }}</a>-->
+<!--      <a href="#">{{ 'Soc influencer' | translate }}</a>-->
+<!--      <a href="#">{{ 'HOME_WHO_WE_ARE' | translate }}</a>-->
+<!--      <a href="#">{{ 'HOME_PRICES' | translate }}</a>-->
+<!--      <a href="#">{{ 'HOME_CONTACT' | translate }}</a>-->
+<!--      <a href="#">{{ 'HOME_BLOG' | translate }}</a>-->
+      <a href="/login">{{ 'HOME_LOGIN' | translate }}</a>
+    </nav>
+    <div class="lang-select">
+      <label for="language-select">{{ 'HOME_LANGUAGE' | translate }}</label>
+      <select id="language-select" [(ngModel)]="language" (change)="changeLanguage()">
+        <option value="es"><a href="/es">Español</a></option>
+        <option value="ca"><a href="/ca">Català</a></option>
+        <option value="en"><a href="/en">English</a></option>
+      </select>
+    </div>
+  </header>
+</section>

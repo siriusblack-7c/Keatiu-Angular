@@ -1,0 +1,25 @@
+<app-header-authenticated></app-header-authenticated>
+
+<div class="background">
+  <mat-card class="payment-card">
+    <mat-card-title>¡Gracias por suscribirte a Kreatiu!</mat-card-title>
+    <mat-card-content>
+      <p>Ya puedes realizar el pago:</p>
+      <div class="payment-details">
+        <p><strong>Cuenta bancaria:</strong> <span>ES00 0000 0000 0000 0000</span></p>
+        <p><strong>Nombre:</strong> <span>Kreatiu S.L.</span></p>
+        <p><strong>Cantidad:</strong> <span>200 €</span></p>
+      </div>
+      <p>Se te ha enviado un email con estos datos para que puedas realizar el pago anual.</p>
+      <mat-divider></mat-divider>
+      <p class="note">Si no eres CaixaBank tu transferencia durará dos días en llegar. Para agilizar la activación de tu
+        cuenta, envía un email a <a href="mailto:activate@kreatiu.cat">activate&#64;kreatiu.cat</a> con el justificante
+        de la transferencia o simplemente contesta al correo electrónico con el mismo.</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/panel">Ir a tu panel</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

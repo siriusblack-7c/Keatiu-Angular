@@ -1,0 +1,116 @@
+<section></section>
+<app-header></app-header>
+
+<section class="section" style="background-color: white; color: #1a237e;">
+
+  <div>
+    <div class="aina-interview">
+      <img src="/assets/kreatiu/aina_cut_large.png" alt="Aina Roma" class="aina-image">
+      <div class="aina-text" id="animated-text">
+        <p>{{ 'HOME_AINA_INTRO' | translate }}</p>
+<!--        <div style="float: right">-->
+<!--          <button [routerLink]="'/register'" mat-raised-button color="primary">{{ 'HOME_AINA_BUTTON' | translate }}</button>-->
+<!--        </div>-->
+      </div>
+
+    </div><!--
+    <h1><span
+      style="color: #f57c00;">{{ 'HOME_SELL_MORE' | translate }}</span> {{ 'HOME_USING_ONE_MINUTE' | translate }}</h1>-->
+    <h2>{{ 'HOME_RECEIVE_CONTENT' | translate }}</h2>
+    <a [routerLink]="'/register'" class="btn">{{ 'HOME_START_NOW' | translate }}</a>
+    <a [href]="'/' + language.replace('ca', '') + '#section2'" class="btn btn-outline-inverse">{{ 'HOME_EXAMPLES' | translate }}
+      <mat-icon style="position: absolute; margin-top: -4px">expand_more</mat-icon>
+    </a><br/>
+<!--    <h3>{{ 'HOME_OWN_CONTENT_MANAGER' | translate }}</h3>-->
+<!--    <small>{{ 'HOME_OTHER_COMPANIES' | translate }}</small>-->
+<!--    <br/>-->
+<!--    <small>{{ 'HOME_KRETIU_SAVES' | translate }}</small>-->
+  </div>
+</section>
+<section id="section2" class="section">
+  <div class="content">
+
+    <div class="slider-container">
+      <mat-tab-group>
+        <mat-tab label="Facebook">
+          <img style="max-width: 100%" src="/assets/kreatiu/website/examples/ca/facebook.png" alt="Slide 2">
+        </mat-tab>
+        <mat-tab label="Twitter (X)">
+          <img style="max-width: 100%" src="/assets/kreatiu/website/examples/ca/twitter.png" alt="Slide 3">
+        </mat-tab>
+        <mat-tab label="LinkedIn">
+          <img style="max-width: 100%" src="/assets/kreatiu/website/examples/ca/linkedin.png" alt="Slide 4">
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <h2><span
+      style="color: #1a237e">{{ 'HOME_DAILY_CONTENT' | translate }}</span><br/>{{ 'HOME_COPY_PASTE' | translate }}</h2>
+    <ul>
+      <li><span style="color: #1a237e">{{ 'HOME_LIKE_YOURS' | translate }}</span></li>
+      <li>{{ 'HOME_ALIGNED_VISION' | translate }}</li>
+      <li>{{ 'HOME_ALIGNED_COMMUNICATION' | translate }}</li>
+      <li>{{ 'HOME_AI_HUMAN' | translate }}</li>
+    </ul>
+    <a [routerLink]="'/register'" class="btn">{{ 'HOME_START_NOW' | translate }}</a>
+    <a [href]="'/' + language.replace('ca', '') + '#section3'" class="btn btn-outline">{{ 'HOME_READ_MORE' | translate }}
+      <mat-icon style="position: absolute; margin-top: -4px">expand_more</mat-icon>
+    </a>
+
+  </div>
+
+</section>
+<section id="section3" class="section" style="background-color: white; color: #1a237e;">
+  <div class="content">
+    <h2><span
+      style="color: #f57c00;">{{ 'HOME_HABIT_SUCCESS' | translate }}</span> {{ 'HOME_EMAIL_CONTENT' | translate }}</h2>
+    <p>{{ 'HOME_DAILY_RECEIVES' | translate }}</p>
+    <ul>
+      <li><strong>{{ 'HOME_STORIES_STATES' | translate }}</strong>
+        <ul>
+          <li>{{ 'HOME_FACEBOOK' | translate }}</li>
+          <li>{{ 'HOME_INSTAGRAM' | translate }}</li>
+          <li>{{ 'HOME_WHATSAPP' | translate }}</li>
+          <li>{{ 'HOME_TIKTOK' | translate }}</li>
+          <li>{{ 'HOME_SNAPCHAT' | translate }}</li>
+        </ul>
+      </li>
+      <li><strong>{{ 'HOME_POSTS' | translate }}</strong>
+        <ul>
+          <li>{{ 'HOME_FACEBOOK' | translate }}</li>
+          <li>{{ 'HOME_LINKEDIN' | translate }}</li>
+          <li>{{ 'HOME_YOUTUBE' | translate }}</li>
+        </ul>
+      </li>
+      <li><strong>{{ 'HOME_MICROBLOGS' | translate }}</strong>
+        <ul>
+          <li>{{ 'HOME_TWITTER' | translate }}</li>
+          <li>{{ 'HOME_MASTODON' | translate }}</li>
+        </ul>
+      </li>
+      <li><strong>{{ 'HOME_BLOG_ENTRIES' | translate }}</strong>
+        <ul>
+          <li>{{ 'HOME_WORDPRESS' | translate }}</li>
+          <li>{{ 'HOME_OWN_WEBSITE' | translate }}</li>
+          <li>{{ 'HOME_MEDIUM' | translate }}</li>
+        </ul>
+      </li>
+    </ul>
+    <a [routerLink]="'/register'" class="btn">{{ 'HOME_START_NOW' | translate }}</a>
+    <a [href]="'/' + language.replace('ca', '') + '#section4'" class="btn btn-outline-inverse">{{ 'HOME_READ_MORE' | translate }}
+      <mat-icon style="position: absolute; margin-top: -4px">expand_more</mat-icon>
+    </a>
+  </div>
+</section>
+<section id="section4" class="section">
+  <div>
+    <h2>
+      <span
+        style="color: #1a237e">{{ 'HOME_EASY_CUSTOMIZABLE' | translate }}</span> {{ 'HOME_DESCRIBE_BUSINESS' | translate }}
+    </h2>
+    <a [routerLink]="'/register'" class="btn">{{ 'HOME_TRY_NOW' | translate }}</a>
+    <p>{{ 'HOME_CATALAN_COMPANY' | translate }}</p>
+    <p>{{ 'HOME_COMPANY_ADDRESS' | translate }}</p>
+  </div>
+</section>
+<app-footer></app-footer>

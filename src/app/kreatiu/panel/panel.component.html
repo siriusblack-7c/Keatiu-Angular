@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- default closed -->
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" [mode]="(isHandset | async) ? 'over' : 'side'"
+               [opened]="false">
+    <mat-nav-list>
+      <mat-list-item routerLink="/panel">
+        <mat-icon>campaign</mat-icon>
+        <span>{{ 'PANEL_YOUR_CAMPAIGNS' | translate }}</span>
+      </mat-list-item>
+      <a href="https://billing.stripe.com/p/login/cN2018fkh2sD4UgdQQ" target="_blank">
+        <mat-list-item>
+          <mat-icon>receipt</mat-icon>
+          <span>
+              {{ 'PANEL_BILLING' | translate }}
+            </span>
+        </mat-list-item>
+      </a>
+
+      <!--      <mat-list-item>-->
+      <!--        <mat-icon>account_circle</mat-icon>-->
+      <!--        <span>Tu cuenta</span>-->
+      <!--      </mat-list-item>-->
+
+      <mat-list-item (click)="requestCloseSession()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>{{ 'PANEL_CLOSE_SESSION' | translate }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: #f59d2d">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="header-logo">
+        <img style="height: 50px; width: 134px" src="/assets/logo_horizontal.jpg" alt="Kreatiu Logo">
+      </span>
+      <span class="spacer"></span>
+      <mat-icon>person</mat-icon>
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

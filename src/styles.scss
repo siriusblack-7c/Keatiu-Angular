@@ -1,0 +1,63 @@
+@use '@angular/material' as mat;
+@use '@angular/material/core/theming/palette' as palette;
+
+@include mat.core();
+
+// Define una paleta primaria básica
+
+$custom-primary: mat.define-palette(mat.$indigo-palette, 700);
+$custom-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+    background: (
+      background: #FFFFFF,
+      status-bar: #212121,
+      app-bar: #3174AD,
+      hover: #F5F5F5,
+      card: #FFFFFF,
+      dialog: #FFFFFF,
+      disabled-button: #F5F5F5,
+      raised-button: #FFFFFF,
+      focused-button: #FF9C1D,
+      selected-button: #FF9C1D,
+      selected-disabled-button: #F5F5F5,
+      disabled-button-toggle: #F5F5F5,
+      unselected-chip: #F5F5F5,
+      disabled-list-option: #F5F5F5
+    ),
+    foreground: (
+      base: #212121,
+      divider: #212121,
+      dividers: #212121,
+      disabled: #F5F5F5,
+      disabled-button: #F5F5F5,
+      disabled-text: #F5F5F5,
+      hint-text: #3174AD,
+      secondary-text: #3174AD,
+      icon: #212121,
+      icons: #212121,
+      text: #212121,
+      slider-min: #FF9C1D,
+      slider-off: #F5F5F5,
+      slider-off-active: #3174AD
+    )
+  )
+));
+
+@include mat.all-component-themes($theme);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  position: static;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

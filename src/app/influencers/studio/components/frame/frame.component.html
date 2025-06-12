@@ -1,0 +1,58 @@
+<mat-sidenav-container class="agenda-container">
+  <mat-sidenav mode="side" opened class="agenda-sidenav">
+    <div class="sidenav-content">
+      <mat-nav-list>
+<!--        <mat-list-item routerLink="/influencers/planner">-->
+<!--          <mat-icon matListIcon>calendar_today</mat-icon>-->
+<!--          <span>Agenda</span>-->
+<!--        </mat-list-item>-->
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item routerLink="/influencers/studio/youtube/long/index">
+          <mat-icon matListIcon>movie</mat-icon>
+          <span>Vídeos</span>
+        </mat-list-item>
+
+        <mat-list-item style="cursor: default" matTooltip="Próximamente">
+          <mat-icon matListIcon style="color: #d0d0d0 !important;">video_library</mat-icon>
+          <span style="color: #d0d0d0 !important;">Shorts</span>
+        </mat-list-item>
+
+<!--        <mat-list-item>-->
+<!--          <mat-icon matListIcon>share</mat-icon>-->
+<!--          <span>Publicaciones</span>-->
+<!--        </mat-list-item>-->
+
+<!--        <mat-list-item>-->
+<!--          <mat-icon matListIcon>article</mat-icon>-->
+<!--          <span>Artículos</span>-->
+<!--        </mat-list-item>-->
+
+<!--        <mat-list-item>-->
+<!--          <mat-icon matListIcon>chat_bubble_outline</mat-icon>-->
+<!--          <span>Microblogging</span>-->
+<!--        </mat-list-item>-->
+      </mat-nav-list>
+
+    </div>
+    <button
+      routerLink="/influencers/account/plans"
+      mat-raised-button class="upgrade-button" color="accent">Mejora tu plan</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="agenda-toolbar">
+      <img src="assets/logo_horizontal_influencers.png" alt="Logo" class="logo" style="height: 40px;">
+      <div style="flex: 1"></div>
+      <button mat-stroked-button routerLink="/influencers/account/character" class="account-button">
+        <mat-icon style="color: white">account_circle</mat-icon>
+      </button>
+
+    </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

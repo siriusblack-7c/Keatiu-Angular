@@ -1,0 +1,20 @@
+<div class="dialog-container">
+  <img [src]="character.image" alt="{{ character.name }}" class="character-image" />
+
+  <h2>Edit Character</h2>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Character Name</mat-label>
+    <input matInput [(ngModel)]="character.name" placeholder="Enter character name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Character Description</mat-label>
+    <textarea matInput [(ngModel)]="character.description" placeholder="Enter character description"></textarea>
+  </mat-form-field>
+
+  <div class="dialog-actions">
+    <button mat-button (click)="closeDialog()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="saveChanges()">Guardar</button>
+  </div>
+</div>

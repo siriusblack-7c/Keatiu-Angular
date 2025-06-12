@@ -1,0 +1,51 @@
+<mat-card>
+
+  <div class="content-container">
+    <div>
+      <mat-spinner style="margin: 0 auto;" *ngIf="this.loadingCharacters" class="loading-spinner"
+                   color="accent"></mat-spinner>
+    </div>
+
+    <img *ngIf="selectedCharacter" [src]="selectedCharacter.image" alt="{{ selectedCharacter.name }}"
+         class="character-image"/>
+
+    <mat-form-field appearance="outline" class="character-select"
+                    *ngIf="characters && characters.length > 0 && !this.loadingCharacters">
+      <mat-label>Elige un personaje</mat-label>
+      <mat-select [(value)]="selectedCharacter">
+        <mat-option *ngFor="let character of characters" [value]="character">
+          <div class="character-option">
+            <img [src]="character.image" alt="{{ character.name }}" class="character-avatar"/>
+            <div>
+              <strong>{{ character.name }}</strong><br> -
+              <small>{{ character.description }}</small>
+            </div>
+          </div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button (click)="openEditDialog()" mat-stroked-button class="new-character-btn">Edita tu personaje</button>
+
+    <a href="/influencers/studio/youtube/long" routerLink="/influencers/studio/youtube/long/index"
+       style="margin-top: 1rem; align-self: flex-start; display: flex; align-items: center; gap: 0.5rem; padding-left: 1rem;">
+      <mat-icon>arrow_left</mat-icon>
+      Volver
+    </a>
+
+    <mat-divider></mat-divider>
+
+    <button (click)="logout()" class="logout-button" mat-raised-button color="warn">Cerrar sesión</button>
+
+    <mat-divider></mat-divider>
+    <!-- warning danger zone -->
+
+    <div class="danger-zone">
+      <h3>Zona de peligro</h3>
+    </div>
+
+    <mat-divider></mat-divider>
+    <button (click)="deleteAccount()" class="logout-button" mat-raised-button color="black">Borrar cuenta</button>
+  </div>
+
+</mat-card>

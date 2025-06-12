@@ -1,0 +1,254 @@
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: #1a237e;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header img {
+  height: 50px;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1a237e;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #f57c00;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.section:nth-child(even) {
+  background-color: #f57c00;
+  color: white;
+}
+
+.section h1 {
+  font-size: 3em;
+  margin: 0.5em 0;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.section p {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 1em;
+  padding: 1em 2em;
+  background-color: #1a237e;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-inverse {
+  background-color: #f57c00;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline-inverse {
+  background-color: transparent;
+  border: 2px solid #f57c00;
+  color: #f57c00;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .img-desktop {
+    display: none;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  nav a {
+    margin: 10px 0;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .nav-open nav {
+    display: flex;
+  }
+}
+
+.img-desktop img {
+  width: 400px;
+  height: 600px;
+}
+
+.content ul {
+  text-align: left;
+  list-style: disc;
+  padding-left: 20px;
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.content ul li {
+  text-align: left;
+}
+
+.lang-select {
+  display: flex;
+  align-items: center;
+}
+
+.lang-select select {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 16px;
+  color: #1a237e;
+  border: 1px solid #1a237e;
+  background-color: white;
+  border-radius: 4px;
+}
+
+
+
+.aina-interview {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+.aina-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.aina-text {
+  //flex-grow: 1;// Lo he tenido que ocultar porque directamente no sale la animación
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* The cursor */
+  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+    white-space: pre-wrap;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .aina-interview {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1vh;
+  }
+  .aina-image {
+    margin: 0 0 10px 0;
+  }
+  .aina-text {
+    text-align: center;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider-container, .aina-container {
+  width: 100%;
+}
+
+.slider-container {
+  /* Estilos para tu slider */
+  background-color: #f0f0f0;
+}
+
+.aina-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.aina-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.aina-text {
+  text-align: left;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}

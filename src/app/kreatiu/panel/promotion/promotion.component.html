@@ -1,0 +1,119 @@
+<div *ngIf="promotion != null">
+  <a href="/panel" routerLink="/panel">
+    <span>{{'PANEL_YOUR_CAMPAIGNS' | translate}}</span>
+  </a>
+  <mat-icon style="position: relative; top: 6px;">chevron_right</mat-icon>
+  <a (click)="editingField=''" href="/panel/promotion/{{ promotion_uuid }}" routerLink="/panel/promotion/{{ promotion_uuid }}">
+    <span>{{ this.promotion?.title }}</span>
+  </a>
+</div>
+
+<mat-card class="promotion-card" *ngIf="promotion">
+
+  <div class="promotion-fields" *ngIf="editingField === ''">
+    <div class="field-row" (click)="navigateToEdit('title')">
+      <span class="field-label">{{ promotion.title }}</span>
+      <button mat-icon-button class="edit-button">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <!-- Contenedor de la Promoción -->
+    <mat-divider></mat-divider>
+    <div class="promotion-fields">
+
+
+<!--      <div class="field-row" (click)="navigateToEdit('description')">-->
+<!--        <span class="field-label">Descripción</span>-->
+<!--        <button mat-icon-button class="edit-button">-->
+<!--          <mat-icon>chevron_right</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+
+      <div class="field-row" (click)="navigateToEdit('about')">
+        <span class="field-label">{{'PANEL_PROMOTION_ABOUT' | translate }}</span>
+        <button mat-icon-button class="edit-button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+
+      <div class="field-row" (click)="navigateToEdit('target')">
+        <span class="field-label">{{'PANEL_PROMOTION_TARGET' | translate}}</span>
+        <button mat-icon-button class="edit-button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+
+      <div class="field-row" (click)="navigateToEdit('communication_rules')">
+        <span class="field-label">{{'PANEL_PROMOTION_COMMUNICATION_RULES' | translate}}</span>
+        <button mat-icon-button class="edit-button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+
+<!--      <div class="field-row" (click)="navigateToEdit('call_to_action_type')">-->
+<!--        <span class="field-label">Tipo de llamada a la acción</span>-->
+<!--        <button mat-icon-button class="edit-button">-->
+<!--          <mat-icon>chevron_right</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+
+      <div class="field-row" (click)="navigateToEdit('call_to_action')">
+        <span class="field-label">{{'PANEL_PROMOTION_CALL_TO_ACTION' | translate}}</span>
+        <button mat-icon-button class="edit-button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+
+<!--      <div class="field-row" (click)="navigateToEdit('platforms')">-->
+<!--        <span class="field-label">Plataformas</span>-->
+<!--        <button mat-icon-button class="edit-button">-->
+<!--          <mat-icon>chevron_right</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--      <div class="field-row" (click)="navigateToEdit('language')">-->
+<!--        <span class="field-label">Idioma</span>-->
+<!--        <button mat-icon-button class="edit-button">-->
+<!--          <mat-icon>chevron_right</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- Eliminar campaña -->
+<!--    <div class="delete-section">-->
+<!--      <button mat-stroked-button color="warn">{{ 'PANEL_PROMOTION_REMOVE_PROMOTION' | translate }}</button>-->
+<!--    </div>-->
+  </div>
+  <div class="edit-form" *ngIf="editingField !== ''">
+    <div>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="navigateToMainView()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>{{ fieldConfiguration?.[editingField].label | translate }}</span>
+
+      </mat-toolbar>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>{{ this.fieldConfiguration?.[editingField].label | translate }}</mat-label>
+        <textarea #content matInput [attr.maxlength]="fieldConfiguration?.[editingField]?.maxLength" style="min-height: 300px"
+        >{{ this.promotion[editingField] }}</textarea>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="button-group">
+      <button
+        (click)="this.patchField(content.value)"
+        [disabled]="fieldConfiguration?.[editingField]?.minLength > content.value.length"
+              mat-raised-button color="primary">{{'PANEL_PROMOTION_SAVE' | translate}}</button>
+    </div>
+  </div>
+</mat-card>

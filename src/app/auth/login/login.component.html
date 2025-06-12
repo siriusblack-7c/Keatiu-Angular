@@ -1,0 +1,61 @@
+<app-header-authenticated></app-header-authenticated>
+<div class="background">
+  <div>
+    <img src="/assets/logo_full.png"
+         style="width: 80%; max-width: 600px; height: auto; display: block; border-radius: 4px;padding-top: 5vh;margin: 0 auto">
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
+
+    <mat-card style="width: 90%; max-width: 500px; margin: auto; padding: 20px;">
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>
+            {{ "LOGIN_EMAIL" | translate }}
+          </mat-label>
+          <input matInput #emailField="ngModel" placeholder="{{ 'LOGIN_YOUR_EMAIL' | translate }}" autocomplete="email"
+                 type="email"
+                 [(ngModel)]="email" name="email" required>
+          <mat-error *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+            {{ 'LOGIN_EMAIL_INVALID' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>{{ 'LOGIN_PASSWORD' | translate }}</mat-label>
+          <input matInput #passwordField="ngModel" placeholder="{{ 'LOGIN_YOUR_PASSWORD' | translate }}" type="password"
+                 [(ngModel)]="password" name="password" required>
+          <mat-error *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+            {{ 'LOGIN_PASSWORD_INVALID' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-error *ngIf="error.length > 0">{{ error | translate }}</mat-error>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          style="width: 100%"
+          [disabled]="!loginForm.valid"
+        >
+          {{ 'LOGIN' | translate }}
+        </button>
+      </form>
+
+      <div style="text-align: center; padding-top: 20px;">
+        <a href="/register" mat-button>
+          {{ 'LOGIN_REGISTER' | translate }}
+        </a>
+      </div>
+      <div style="text-align: center; padding-top: 10px;">
+        <a href="#" mat-button>
+          {{ 'LOGIN_FORGOT_PASSWORD' | translate }}
+        </a>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<app-footer></app-footer>

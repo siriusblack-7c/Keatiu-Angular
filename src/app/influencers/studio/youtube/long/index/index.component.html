@@ -1,0 +1,98 @@
+<mat-card class="main-container">
+  <h1>Tus creaciones</h1>
+  <p class="subtitle">Administra y edita tus vídeos generados automáticamente</p>
+
+  <div class="create-button-container">
+    <button mat-flat-button color="primary" routerLink="/influencers/studio/youtube/long">
+      <mat-icon>add</mat-icon>
+      Crear nuevo vídeo
+    </button>
+  </div>
+
+  <section *ngIf="fetchingVideos">
+    <p>Cargando vídeos...</p>
+  </section>
+
+  <section *ngIf="!fetchingVideos && videos.length === 0">
+    <p>No hay vídeos por ahora.</p>
+  </section>
+
+  <section *ngFor="let video of videos" class="video-item">
+    <div class="top-right-menu">
+      <button mat-icon-button [matMenuTriggerFor]="moreMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #moreMenu="matMenu">
+        <button mat-menu-item (click)="deleteVideo(video)">
+          <mat-icon>archive</mat-icon>
+          Archivar
+        </button>
+      </mat-menu>
+    </div>
+
+    <div class="video-container">
+      <img
+        mat-card-image
+        class="video-thumbnail"
+        [src]="video.thumbnail"
+        alt="Miniatura del vídeo"
+        (click)="navigateToVideo(video)"
+        matTooltip="Aquí se verá tu miniatura generada automáticamente"
+      >
+
+      <div class="video-details">
+        <h3 (click)="navigateToVideo(video)">{{ video.title }}</h3>
+        <p>{{ video.description | slice:0:100 }}...</p>
+
+        <div class="video-actions">
+<!--          <button mat-icon-button [matMenuTriggerFor]="downloadMenu">-->
+<!--            <mat-icon>download</mat-icon>-->
+<!--          </button>-->
+<!--          <mat-menu #downloadMenu="matMenu">-->
+<!--            <button mat-menu-item>-->
+<!--              <mat-icon>subtitles</mat-icon>-->
+<!--              Descargar subtítulos-->
+<!--            </button>-->
+<!--            <button mat-menu-item>-->
+<!--              <mat-icon>image</mat-icon>-->
+<!--              Descargar miniatura-->
+<!--            </button>-->
+<!--          </mat-menu>-->
+
+<!--          <button mat-icon-button [matMenuTriggerFor]="copyMenu">-->
+<!--            <mat-icon>content_copy</mat-icon>-->
+<!--          </button>-->
+<!--          <mat-menu #copyMenu="matMenu">-->
+<!--            <button mat-menu-item>-->
+<!--              <mat-icon>subtitles</mat-icon>-->
+<!--              Copiar subtítulos-->
+<!--            </button>-->
+<!--            <button mat-menu-item>-->
+<!--              <mat-icon>description</mat-icon>-->
+<!--              Descargar descripción-->
+<!--            </button>-->
+<!--            <button mat-menu-item>-->
+<!--              <mat-icon>comment</mat-icon>-->
+<!--              Descargar primer comentario-->
+<!--            </button>-->
+<!--          </mat-menu>-->
+
+<!--          <button mat-icon-button matTooltip="Editar vídeo" (click)="navigateToVideo(video)">-->
+<!--            <mat-icon>edit</mat-icon>-->
+<!--          </button>-->
+
+<!--          <button mat-raised-button color="accent" class="mic-button" routerLink="/influencers/studio/youtube/long/teleprompter">-->
+<!--            <mat-icon>mic</mat-icon>-->
+<!--          </button>-->
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </section>
+
+  <div class="pagination-controls" *ngIf="!fetchingVideos && lastPage > 1">
+    <button mat-button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ lastPage }}</span>
+    <button mat-button (click)="nextPage()" [disabled]="currentPage === lastPage">Siguiente</button>
+  </div>
+</mat-card>

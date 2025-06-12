@@ -1,0 +1,95 @@
+<h1>{{ 'PANEL_YOUR_CAMPAIGNS' | translate }}</h1>
+
+<div style="margin: 10px 0">
+  <button mat-raised-button>
+    <mat-icon>add</mat-icon>
+    <a
+      href="/onboarding-company/new"
+      routerLink="/onboarding-company/new"
+      style="color: black; text-decoration: none"
+    >
+      {{ 'PANEL_CREATE_NEW_BRAND' | translate }}
+    </a>
+  </button>
+</div>
+
+
+<div *ngIf="!companies">
+  <button mat-raised-button color="primary" routerLink="/onboarding-company">
+    <mat-icon
+      style="color: white"
+    >
+      campaign
+    </mat-icon>
+    {{ 'PANEL_START_NOW' | translate }}
+  </button>
+</div>
+
+<mat-accordion *ngIf="companies">
+  <mat-expansion-panel *ngFor="let company of companies" [expanded]="false">
+    <div style="margin: 10px 0;">
+      <button mat-raised-button>
+        <mat-icon>add</mat-icon>
+        <a
+          href="/onboarding-promotion/{{ company.uuid }}"
+          routerLink="/onboarding-promotion/{{ company.uuid }}"
+          style="color: black; text-decoration: none"
+        >
+          {{ 'PANEL_CREATE_NEW_CAMPAIGN' | translate }}
+        </a>
+      </button>
+    </div>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>{{ company.brand }}</span>
+      </mat-panel-title>
+      <mat-panel-description>
+        <!--              <mat-icon>edit</mat-icon>-->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-expansion-panel *ngFor="let promotion of this.promotionsByCompany[company.uuid]" [expanded]="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <!-- Add a mat-icon to pay -->
+          <span>
+                  <mat-icon
+                    (click)="this.pay(promotion.uuid)"
+                    *ngIf="!promotion.active"
+                    style="color: red"
+                  >
+                    payment
+                  </mat-icon>
+                  <mat-icon
+                    *ngIf="promotion.active"
+                    style="color: green"
+                    title="Campaña activa"
+                  >
+                    check_circle
+                  </mat-icon>
+            {{ promotion.title }}
+                </span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="button-list">
+        <!-- Ver campaña -->
+        <button mat-raised-button color="primary" routerLink="/panel/promotion/{{ promotion.uuid }}">
+          <mat-icon
+            style="color: white"
+          >
+            visibility
+          </mat-icon>
+          {{'PANEL_VIEW_CAMPAIGN' | translate}}
+        </button>
+
+        <button mat-raised-button color="primary" (click)="this.pay(promotion.uuid)" *ngIf="!promotion.active">
+          <mat-icon
+            style="color: white"
+          >
+            payment
+          </mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-expansion-panel>
+</mat-accordion>

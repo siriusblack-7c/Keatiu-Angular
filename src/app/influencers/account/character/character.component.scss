@@ -1,0 +1,87 @@
+mat-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 16px;
+}
+
+.character-select {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.character-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.character-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.character-image {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 16px auto;
+}
+
+.new-character-btn {
+  margin: 8px 0 16px 0;
+}
+
+.generate-button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.logout-button {
+  width: 100%;
+  margin-top: 16px;
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+  &:hover {
+    background-color: #d32f2f;
+  }
+}
+
+.danger-zone {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: #ffebee;
+  border-radius: 8px;
+  text-align: center;
+
+  h3 {
+    color: #d32f2f;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #757575;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  button {
+    background-color: #d32f2f;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #b71c1c;
+    }
+  }
+}

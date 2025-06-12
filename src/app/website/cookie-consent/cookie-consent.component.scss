@@ -1,0 +1,11 @@
+.cookie-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.cookie-button button {
+  border-radius: 12px;
+  background-color: #f1f1f1;
+}

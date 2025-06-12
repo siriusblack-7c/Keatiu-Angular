@@ -1,0 +1,46 @@
+mat-card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 16px;
+}
+
+.character-select {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.character-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.character-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.character-image {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 16px auto;
+}
+
+.new-character-btn {
+  margin: 8px 0 16px 0;
+}
+
+.generate-button {
+  width: 100%;
+  margin-top: 16px;
+}
