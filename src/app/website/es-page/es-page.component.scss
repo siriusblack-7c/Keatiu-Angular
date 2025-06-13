@@ -892,7 +892,7 @@ footer {
 
 @media screen and (min-width: 1440px) {
   .scroll-nav-arrow {
-    display: flex;
+    display: flex !important;
   }
 }
 
