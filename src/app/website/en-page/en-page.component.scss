@@ -579,6 +579,11 @@ option {
 }
 
 @media screen and (max-width: 425px) {
+
+  .footer-center> a{
+    padding: 0.1px !important;
+  }
+
   .footer-toolbar {
     padding: 1rem 0.5rem;
     font-size: 0.85rem;
