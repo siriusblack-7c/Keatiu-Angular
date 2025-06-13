@@ -37,6 +37,7 @@ export class EnPageComponent {
   isOnCTA = false;
   isNearBottom = false;
   isMenuOpen = false;
+  isAtBottom = false;
 
   constructor(
     private titleService: Title,
@@ -54,21 +55,28 @@ export class EnPageComponent {
     }
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollTop = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const fullHeight = document.documentElement.scrollHeight;
-
-    this.isNearBottom = scrollTop + windowHeight >= fullHeight - 300;
-  }
-
-  scrollDown(): void {
-    if (this.isNearBottom) {
+  handleScrollClick() {
+    if (this.isAtBottom) {
+      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
+      // Scroll down by viewport height
       window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Check if at bottom (within 50px)
+    this.isAtBottom = scrollTop + windowHeight >= documentHeight - 50;
+
+    // Existing logic
+    this.isNearBottom = scrollTop + windowHeight > documentHeight * 0.8;
+    this.isOnCTA = scrollTop > 100;
   }
 
   startWithGoogle() {

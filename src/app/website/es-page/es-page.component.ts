@@ -1,22 +1,22 @@
-import {Component, HostListener, Inject} from '@angular/core';
-import {FooterComponent} from "../home/footer/footer.component";
-import {HeaderInfluencersComponent} from "../home-influencers/header-influencers/header-influencers.component";
+import { Component, HostListener, Inject } from '@angular/core';
+import { FooterComponent } from "../home/footer/footer.component";
+import { HeaderInfluencersComponent } from "../home-influencers/header-influencers/header-influencers.component";
 import {
   MatAccordion,
   MatExpansionPanel,
   MatExpansionPanelHeader,
   MatExpansionPanelTitle
 } from "@angular/material/expansion";
-import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
-import {DOCUMENT, NgClass, NgIf} from "@angular/common";
-import {MatAnchor, MatButton} from "@angular/material/button";
-import {MatToolbar} from "@angular/material/toolbar";
-import {RouterLink} from "@angular/router";
-import {TranslateModule} from "@ngx-translate/core";
-import {MatTooltip} from "@angular/material/tooltip";
-import {MatIcon} from "@angular/material/icon";
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {Meta, Title} from "@angular/platform-browser";
+import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from "@angular/material/card";
+import { DOCUMENT, NgClass, NgIf } from "@angular/common";
+import { MatAnchor, MatButton } from "@angular/material/button";
+import { MatToolbar } from "@angular/material/toolbar";
+import { RouterLink } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
+import { MatTooltip } from "@angular/material/tooltip";
+import { MatIcon } from "@angular/material/icon";
+import { MatGridList, MatGridTile } from "@angular/material/grid-list";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-es-page',
@@ -52,6 +52,8 @@ export class EsPageComponent {
   isNearBottom = false;
   isOnCTA = false;
   isMenuOpen = false;
+  isAtBottom = false;
+
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -64,22 +66,31 @@ export class EsPageComponent {
   @HostListener('window:scroll', [])
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('show');
+    }
   }
 
-  @HostListener('window:scroll', [])
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    const scrollTop = window.scrollY;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
-    const fullHeight = document.documentElement.scrollHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
-    this.isNearBottom = scrollTop + windowHeight >= fullHeight - 300;
+    // Check if at bottom (within 50px)
+    this.isAtBottom = scrollTop + windowHeight >= documentHeight - 50;
+
+    // Existing logic
+    this.isNearBottom = scrollTop + windowHeight > documentHeight * 0.8;
+    this.isOnCTA = scrollTop > 100;
   }
 
   scrollDown(): void {
     if (this.isNearBottom) {
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     }
   }
 
@@ -91,7 +102,7 @@ export class EsPageComponent {
     const el = document.getElementById('how-it-works');
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 200;
-      window.scrollTo({top: y, behavior: 'smooth'});
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
 
@@ -112,13 +123,13 @@ export class EsPageComponent {
     existingHreflangs.forEach(el => el.remove());
 
     const hreflangs = [
-      {lang: 'es', href: 'https://kreatiu.cat/es'},
-      {lang: 'ca', href: 'https://kreatiu.cat/cat'},
-      {lang: 'en', href: 'https://kreatiu.cat/en'},
-      {lang: 'x-default', href: 'https://kreatiu.cat'}
+      { lang: 'es', href: 'https://kreatiu.cat/es' },
+      { lang: 'ca', href: 'https://kreatiu.cat/cat' },
+      { lang: 'en', href: 'https://kreatiu.cat/en' },
+      { lang: 'x-default', href: 'https://kreatiu.cat' }
     ];
 
-    hreflangs.forEach(({lang, href}) => {
+    hreflangs.forEach(({ lang, href }) => {
       const linkEl = this.document.createElement('link');
       linkEl.setAttribute('rel', 'alternate');
       linkEl.setAttribute('hreflang', lang);
@@ -135,5 +146,15 @@ export class EsPageComponent {
     canonicalLink.setAttribute('rel', 'canonical');
     canonicalLink.setAttribute('href', 'https://kreatiu.cat/es');
     this.document.head.appendChild(canonicalLink);
+  }
+
+  handleScrollClick() {
+    if (this.isAtBottom) {
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Scroll down by viewport height
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    }
   }
 }

@@ -30,6 +30,12 @@
   </button>
 
 </mat-toolbar>
+
+<!-- Scroll Navigation Arrow -->
+<div class="scroll-nav-arrow" (click)="handleScrollClick()" [ngClass]="{ 'at-bottom': isAtBottom }">
+  <mat-icon>{{ isAtBottom ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+</div>
+
 <div class="container container-first">
 
   <h1 class="main-title">KREATIU INFLUENCERS</h1>
@@ -72,14 +78,6 @@
   </div>
   <p class="little-text">Un click, un vídeo.</p>
 
-  <div *ngIf="!isOnCTA" class="scroll-indicator" [ngClass]="{ 'reverse': isNearBottom }" (click)="scrollDown()">
-    <div class="arrow-wrapper">
-      <div class="arrow"></div>
-    </div>
-    <div class="arrow-wrapper second">
-      <div class="arrow"></div>
-    </div>
-  </div>
 </div>
 
 <div class="container container-second">
