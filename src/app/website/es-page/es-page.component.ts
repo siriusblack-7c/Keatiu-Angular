@@ -51,7 +51,7 @@ export class EsPageComponent {
 
   isNearBottom = false;
   isOnCTA = false;
-
+  isMenuOpen = false;
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -59,6 +59,11 @@ export class EsPageComponent {
   ) {
     this.setupSEO()
     document.cookie = 'lang=es; path=/; max-age=31536000';
+  }
+
+  @HostListener('window:scroll', [])
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   @HostListener('window:scroll', [])

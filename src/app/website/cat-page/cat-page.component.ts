@@ -44,7 +44,7 @@ export class CatPageComponent {
 
   isNearBottom = false;
   isOnCTA = false;
-
+  isMenuOpen = false;
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -55,6 +55,10 @@ export class CatPageComponent {
   }
 
   @HostListener('window:scroll', [])
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   onWindowScroll() {
     const scrollTop = window.scrollY;
     const windowHeight = window.innerHeight;
