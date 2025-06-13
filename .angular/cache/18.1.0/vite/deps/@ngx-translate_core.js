@@ -18,13 +18,13 @@ import {
   ɵɵdirectiveInject,
   ɵɵgetInheritedFactory,
   ɵɵinject
-} from "./chunk-566U7LCX.js";
+} from "./chunk-XCKQTOKA.js";
 import {
   defer,
   forkJoin,
   isObservable
-} from "./chunk-TZGQ2RQE.js";
-import "./chunk-2WNOP3CO.js";
+} from "./chunk-5X3OOUUX.js";
+import "./chunk-TFMRLFGK.js";
 import {
   concat,
   concatMap,
@@ -33,12 +33,12 @@ import {
   shareReplay,
   switchMap,
   take
-} from "./chunk-U6WJODAF.js";
+} from "./chunk-KQP4K3F6.js";
 import {
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
 
-// ../node_modules/@ngx-translate/core/dist/fesm2022/ngx-translate-core.mjs
+// node_modules/@ngx-translate/core/dist/fesm2022/ngx-translate-core.mjs
 var TranslateLoader = class {
 };
 var TranslateFakeLoader = class _TranslateFakeLoader extends TranslateLoader {

@@ -1,50 +1,42 @@
-import {Component, HostListener, Inject} from '@angular/core';
-import {
-  MatAccordion,
-  MatExpansionPanel,
-  MatExpansionPanelHeader,
-  MatExpansionPanelTitle
-} from "@angular/material/expansion";
-import {MatAnchor, MatButton} from "@angular/material/button";
-import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
-import {MatIcon} from "@angular/material/icon";
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatTooltip} from "@angular/material/tooltip";
-import {DOCUMENT, NgClass, NgIf} from "@angular/common";
-import {RouterLink} from "@angular/router";
-import {TranslateModule} from "@ngx-translate/core";
-import {Meta, Title} from "@angular/platform-browser";
+import { Component, HostListener, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { TranslateModule } from "@ngx-translate/core";
+import { Meta, Title } from "@angular/platform-browser";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { MatCardContent, MatCardHeader, MatCardModule, MatCardTitle } from '@angular/material/card';
+import { MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
+import { MatAccordion } from '@angular/material/expansion';
+import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-en-page',
+  templateUrl: './en-page.component.html',
+  styleUrls: ['./en-page.component.scss'],
   standalone: true,
   imports: [
-    MatAccordion,
-    MatAnchor,
-    MatButton,
-    MatCard,
-    MatCardContent,
+    RouterLink,
+    TranslateModule,
+    NgClass,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
     MatCardHeader,
     MatCardTitle,
+    MatCardContent,
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    MatIcon,
-    MatToolbar,
-    MatTooltip,
-    NgIf,
-    RouterLink,
-    TranslateModule,
-    NgClass
-  ],
-  templateUrl: './en-page.component.html',
-  styleUrl: './en-page.component.scss'
+    MatAccordion,
+    MatToolbar
+  ]
 })
 export class EnPageComponent {
-
-  isNearBottom = false;
   isOnCTA = false;
-
+  isNearBottom = false;
+  isMenuOpen = false;
 
   constructor(
     private titleService: Title,
@@ -52,7 +44,14 @@ export class EnPageComponent {
     @Inject(DOCUMENT) private document: Document
   ) {
     this.setupSEO();
-    document.cookie = 'lang=en; path=/; max-age=31536000';
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('show');
+    }
   }
 
   @HostListener('window:scroll', [])
@@ -66,9 +65,9 @@ export class EnPageComponent {
 
   scrollDown(): void {
     if (this.isNearBottom) {
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     }
   }
 
@@ -80,7 +79,7 @@ export class EnPageComponent {
     const el = document.getElementById('how-it-works');
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 200;
-      window.scrollTo({top: y, behavior: 'smooth'});
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
 
@@ -101,13 +100,13 @@ export class EnPageComponent {
     existingHreflangs.forEach(el => el.remove());
 
     const hreflangs = [
-      {lang: 'es', href: 'https://kreatiu.cat/es'},
-      {lang: 'ca', href: 'https://kreatiu.cat/cat'},
-      {lang: 'en', href: 'https://kreatiu.cat/en'},
-      {lang: 'x-default', href: 'https://kreatiu.cat'}
+      { lang: 'es', href: 'https://kreatiu.cat/es' },
+      { lang: 'ca', href: 'https://kreatiu.cat/cat' },
+      { lang: 'en', href: 'https://kreatiu.cat/en' },
+      { lang: 'x-default', href: 'https://kreatiu.cat' }
     ];
 
-    hreflangs.forEach(({lang, href}) => {
+    hreflangs.forEach(({ lang, href }) => {
       const linkEl = this.document.createElement('link');
       linkEl.setAttribute('rel', 'alternate');
       linkEl.setAttribute('hreflang', lang);
@@ -125,5 +124,4 @@ export class EnPageComponent {
     canonicalLink.setAttribute('href', 'https://kreatiu.cat/en');
     this.document.head.appendChild(canonicalLink);
   }
-
 }

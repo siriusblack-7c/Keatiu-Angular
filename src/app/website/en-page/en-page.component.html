@@ -1,106 +1,30 @@
-<script>console.log("hi hic new console", 123)</script>
-
 <mat-toolbar color="primary" class="navbar">
-  
-  
   <img routerLink="/" src="/assets/logo_horizontal_influencers.png" alt="Kreatiu Logo" class="logo-image">
 
-  <a style="text-decoration: none; color: white; "   class="nav-right-flag" href="/es">
-    <div matTooltip="Español" style="
-  width: 48px;
-  height: 32px;
-  background: linear-gradient(
-    to bottom,
-    #aa151b 0%,
-    #aa151b 33%,
-    #f1bf00 33%,
-    #f1bf00 66%,
-    #aa151b 66%,
-    #aa151b 100%
-  );
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: inline-block;
-"></div>
-  </a>
+  <span class="spacer"></span>
 
-  <a style="text-decoration: none; color: white; padding: 5px" class="nav-right-flag" href="/cat">
-    <div matTooltip="Català" style="
-  width: 48px;
-  height: 32px;
-  background: linear-gradient(
-    to bottom,
-    #fcdd09 0%,
-    #c60c30 20%,
-    #fcdd09 30%,
-    #c60c30 40%,
-    #fcdd09 50%,
-    #c60c30 60%,
-    #fcdd09 70%,
-    #c60c30 80%,
-    #fcdd09 100%
-  );
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: inline-block;
-"></div>
-  </a>
-
-
-
-
-  <!-- <span class="spacer"></span> -->
-
-  <nav class=" wide-nav" >
-    <div mat-button (click)="startWithGoogle()" style="display: none !important;" matTooltip="Create YouTube videos with AI">AI Videos</div>
-    <a mat-button (click)="startWithGoogle()"   matTooltip="Record and edit your video scripts in the browser">Online
+  <nav class="nav-links">
+    <a mat-button (click)="startWithGoogle()" matTooltip="Create YouTube videos with AI">AI Videos</a>
+    <a mat-button (click)="startWithGoogle()" matTooltip="Record and edit your video scripts in the browser">Online
       Editor</a>
-    <a mat-button (click)="startWithGoogle()"   matTooltip="Automatic subtitles with AI">Automatic Subtitles</a>
-    <a mat-button (click)="startWithGoogle()"   matTooltip="Content calendar for social media">Content Calendar</a>
+    <a mat-button (click)="startWithGoogle()" matTooltip="Automatic subtitles with AI">Automatic Subtitles</a>
+    <a mat-button (click)="startWithGoogle()" matTooltip="Content calendar for social media">Content Calendar</a>
   </nav>
 
-
-  <nav class=" narrow-nav" style="justify-content: center; display: flex;">
-    <select mat-button  style="border: none; margin-left: 1rem; background-color: rgba(0,0,0,0.3);  outline: none;  color: white;  padding: 10px 5px; border-radius: 10px;"   matTooltip="View the more" >
-    <option mat-button  matTooltip="Create YouTube videos with AI">HOME</option>
-      <option mat-button  >
-        <div mat-button (click)="startWithGoogle()" style="display: none !important;" matTooltip="Create YouTube videos with AI">
-          AI Videos
-        </div>
-      </option>
-      <option mat-button   >
-        <a mat-button (click)="startWithGoogle()"   matTooltip="Record and edit your video scripts in the browser">
-          Online Editor
-        </a>
-      </option>
-      <option mat-button   >
-        <a (click)="startWithGoogle()"   matTooltip="Automatic subtitles with AI">
-          Automatic Subtitles
-        </a>
-      </option>
-      <option mat-button   >
-        <a mat-button (click)="startWithGoogle()"   matTooltip="Content calendar for social media">
-          Content Calendar
-        </a>
-      </option>
-    </select>
-  </nav>
- 
-
-  
-
-
-  <button mat-flat-button color="accent" style="position: absolute; z-index: 99; top: 70px; right: 20px;" class="register-button  cta"  (click)="startWithGoogle()">
-    <span>🚀Start for free with Google</span>
+  <button mat-flat-button color="accent" class="register-button cta" (click)="startWithGoogle()">
+    <span>🚀 Start for free with Google</span>
   </button>
-  
+
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
 
 </mat-toolbar>
 <div class="container container-first">
 
   <h1 class="main-title">KREATIU INFLUENCERS</h1>
   <p class="subtitle">
-    Your cloud content studio.<br/>
+    Your cloud content studio.<br />
     Plan, record, and publish videos for YouTube, Instagram, and TikTok right from your browser.
   </p>
 
@@ -158,13 +82,12 @@
     <div class="row">
       <div class="column">
         <h3>Plan your content</h3>
-        <img src="/assets/kreatiu/website/home/calendar_home.png" alt="Plan your content"
-             class="feature-image">
+        <img src="/assets/kreatiu/website/home/calendar_home.png" alt="Plan your content" class="feature-image">
       </div>
       <div class="column">
         <h3>AI tells you what videos to make.</h3>
         <img src="/assets/kreatiu/website/home/ai_content_home.png" alt="AI tells you what videos to make"
-             class="feature-image">
+          class="feature-image">
       </div>
     </div>
 
@@ -172,12 +95,12 @@
       <div class="column">
         <h3>AI generates the script, you just review.</h3>
         <img src="/assets/kreatiu/website/home/script_ai_home.png" alt="AI generates the script, you just review"
-             class="feature-image">
+          class="feature-image">
       </div>
       <div class="column">
         <h3>Record your voice and video with the teleprompter</h3>
         <img src="/assets/kreatiu/website/home/record_home.png" alt="Record your voice and video with the teleprompter"
-             class="feature-image">
+          class="feature-image">
       </div>
     </div>
 
@@ -228,7 +151,7 @@
       <mat-card
         style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
         <img src="/assets/kreatiu/website/home/aina.png" alt="Aina Roma"
-             style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+          style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
         <mat-card-header>
           <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CEO - Aina Roma</mat-card-title>
         </mat-card-header>
@@ -241,7 +164,7 @@
       <mat-card
         style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
         <img src="/assets/kreatiu/website/home/hans.png" alt="Hans Castro"
-             style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+          style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
         <mat-card-header>
           <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CTO - Hans Castro</mat-card-title>
         </mat-card-header>
@@ -258,7 +181,7 @@
   <section style="max-width: 1200px; margin: 0 auto; text-align: center;">
     <p>
       Our mission is for you to monetize your content and <strong style="text-decoration: underline">live from what you
-      love to do</strong>.
+        love to do</strong>.
     </p>
   </section>
 </div>
@@ -314,7 +237,7 @@
         <div>
           <div style="font-weight: bold;">
             <a target="_blank"
-               href="https://tinku.es/kreatiu-gestion-automatizada-de-contenido-para-redes-sociales-con-ia/">Tinku
+              href="https://tinku.es/kreatiu-gestion-automatizada-de-contenido-para-redes-sociales-con-ia/">Tinku
               TV</a>
           </div>
           <div style="font-size: 0.85rem; color: gray;">Communication medium focused on the business world</div>
@@ -324,17 +247,17 @@
 
   </div>
 
-  <div class="avatar-arrange-stage" >
+  <div class="avatar-arrange-stage">
     <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User 4"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User 5"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
   </div>
 
   <p style="font-size: 0.9rem; color: #ccc;">
@@ -344,7 +267,7 @@
 </div>
 
 <div class="container"
-     style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
+  style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
 
   <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
     Kreatiu Influencers is free.
@@ -379,7 +302,7 @@
         </div>
         <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Influencer</h3>
         <div style="font-size: 2rem; font-weight: bold;">0 €<span
-          style="font-size: 1rem; font-weight: normal;">/month</span></div>
+            style="font-size: 1rem; font-weight: normal;">/month</span></div>
         <p style="margin: 1rem 0; color: #555;">Take the first step</p>
         <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
           <li>✅ Access to the basic calendar</li>
@@ -555,8 +478,8 @@
     </div>
 
     <div class="footer-center">
-      <a mat-button routerLink="/legal/politica-de-privacidad"
-         target="_blank">{{ 'HOME_PRIVACY_POLICY' | translate }}</a>
+      <a mat-button routerLink="/legal/politica-de-privacidad" target="_blank">{{ 'HOME_PRIVACY_POLICY' | translate
+        }}</a>
       <a mat-button routerLink="/legal/cookies" target="_blank">Cookies</a>
       <a mat-button routerLink="/legal/aviso-legal" target="_blank">{{ 'HOME_TERMS_CONDITIONS' | translate }}</a>
       <a mat-button href="#">{{ 'HOME_CONTACT' | translate }}</a>
