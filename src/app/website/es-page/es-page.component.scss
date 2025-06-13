@@ -26,9 +26,9 @@
 
 @media screen and (max-width:1120px) {
 
-  .nav-right-flag {
-    display: none !important;
-  }
+  // .nav-right-flag {
+  //   display: none !important;
+  // }
 
 
   .main-title {
@@ -802,4 +802,48 @@ footer {
 // Hide hamburger menu on larger screens
 .menu-toggle {
   display: none;
+}
+
+.nav-right-flag {
+  margin-left: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flag {
+  width: 32px;
+  height: 22px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.flag-es {
+  background: linear-gradient(to bottom,
+      #aa151b 0%,
+      #aa151b 33%,
+      #f1bf00 33%,
+      #f1bf00 66%,
+      #aa151b 66%,
+      #aa151b 100%);
+}
+
+.flag-cat {
+  background: linear-gradient(to bottom,
+      #fcdd09 0%,
+      #c60c30 20%,
+      #fcdd09 30%,
+      #c60c30 40%,
+      #fcdd09 50%,
+      #c60c30 60%,
+      #fcdd09 70%,
+      #c60c30 80%,
+      #fcdd09 100%);
+}
+
+.flag-en {
+  background: linear-gradient(to bottom,
+      #00247d 0%,
+      #ffffff 50%,
+      #cf142b 100%);
 }

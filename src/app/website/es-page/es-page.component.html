@@ -1,14 +1,24 @@
 <mat-toolbar color="primary" class="navbar">
   <img routerLink="/es" src="/assets/logo_horizontal_influencers.png" alt="Kreatiu Logo" class="logo-image">
 
+  <!-- Language flags (right of logo) -->
+  <a style="text-decoration: none; color: white;" class="nav-right-flag" href="/en">
+    <div matTooltip="English" class="flag flag-en"></div>
+  </a>
+  <a style="text-decoration: none; color: white; padding: 5px" class="nav-right-flag" href="/cat">
+    <div matTooltip="Català" class="flag flag-cat"></div>
+  </a>
+
   <span class="spacer"></span>
 
   <nav class="nav-links">
     <a mat-button (click)="startWithGoogle()" matTooltip="Crea vídeos de YouTube con IA">Vídeos con IA</a>
-    <a mat-button (click)="startWithGoogle()" matTooltip="Graba y edita los guiones de tus vídeos en el navegador">Editor
+    <a mat-button (click)="startWithGoogle()"
+      matTooltip="Graba y edita los guiones de tus vídeos en el navegador">Editor
       online</a>
     <a mat-button (click)="startWithGoogle()" matTooltip="Subtítulos automáticos con IA">Subtítulos automáticos</a>
-    <a mat-button (click)="startWithGoogle()" matTooltip="Agenda de contenido para redes sociales">Agenda de contenido</a>
+    <a mat-button (click)="startWithGoogle()" matTooltip="Agenda de contenido para redes sociales">Agenda de
+      contenido</a>
   </nav>
 
   <button mat-flat-button color="accent" class="register-button cta" (click)="startWithGoogle()">
@@ -24,7 +34,7 @@
 
   <h1 class="main-title">KREATIU INFLUENCERS</h1>
   <p class="subtitle">
-    Tu estudio de contenido en la nube.<br/>
+    Tu estudio de contenido en la nube.<br />
     Planifica, graba y publica vídeos para YouTube, Instagram y TikTok desde tu navegador.
   </p>
 
@@ -82,13 +92,12 @@
     <div class="row">
       <div class="column">
         <h3>Planifica tu contenido</h3>
-        <img src="/assets/kreatiu/website/home/calendar_home.png" alt="Planifica tu contenido"
-             class="feature-image">
+        <img src="/assets/kreatiu/website/home/calendar_home.png" alt="Planifica tu contenido" class="feature-image">
       </div>
       <div class="column">
         <h3>La IA te dice qué vídeos hacer.</h3>
         <img src="/assets/kreatiu/website/home/ai_content_home.png" alt="La IA te dice qué vídeos hacer"
-             class="feature-image">
+          class="feature-image">
       </div>
     </div>
 
@@ -96,12 +105,12 @@
       <div class="column">
         <h3>La IA te genera el guión, tú sólo revisas.</h3>
         <img src="/assets/kreatiu/website/home/script_ai_home.png" alt="La IA te genera el guión, tú sólo revisas"
-             class="feature-image">
+          class="feature-image">
       </div>
       <div class="column">
         <h3>Graba tu voz y vídeo con el teleprompter</h3>
         <img src="/assets/kreatiu/website/home/record_home.png" alt="Graba tu voz y vídeo con el teleprompter"
-             class="feature-image">
+          class="feature-image">
       </div>
     </div>
 
@@ -154,36 +163,41 @@
 
   <h2 style="text-align: center">Conoce al equipo detrás de Kreatiu</h2>
   <section style="max-width: 1200px; margin: 1rem auto;">
-   <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-     <mat-card style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
-       <img src="/assets/kreatiu/website/home/aina.png" alt="Aina Roma" style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
-       <mat-card-header>
-         <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CEO - Aina Roma</mat-card-title>
-       </mat-card-header>
-       <mat-card-content>
-         <small>
-           "Tus sueños son más importantes que el dinero."
-         </small>
-       </mat-card-content>
-     </mat-card>
-     <mat-card style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
-       <img src="/assets/kreatiu/website/home/hans.png" alt="Hans Castro" style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
-       <mat-card-header>
-         <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CTO - Hans Castro</mat-card-title>
-       </mat-card-header>
-       <mat-card-content>
-         <small>
-           "Me obligaron a ser CTO."
-         </small>
-       </mat-card-content>
-     </mat-card>
-   </div>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+      <mat-card
+        style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
+        <img src="/assets/kreatiu/website/home/aina.png" alt="Aina Roma"
+          style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+        <mat-card-header>
+          <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CEO - Aina Roma</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <small>
+            "Tus sueños son más importantes que el dinero."
+          </small>
+        </mat-card-content>
+      </mat-card>
+      <mat-card
+        style="background-color: #f3f4f6; color: black; border-radius: 1rem; padding: 2rem; max-width: 400px; flex: 1 1 300px;">
+        <img src="/assets/kreatiu/website/home/hans.png" alt="Hans Castro"
+          style="width: 100%; border-radius: 0.75rem; margin-bottom: 1rem;">
+        <mat-card-header>
+          <mat-card-title style="font-size: 1.5rem; font-weight: 600;">CTO - Hans Castro</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <small>
+            "Me obligaron a ser CTO."
+          </small>
+        </mat-card-content>
+      </mat-card>
+    </div>
 
   </section>
   <h2 style="text-align: center; margin-bottom: 1rem;">Nuestra misión: Tu éxito</h2>
   <section style="max-width: 1200px; margin: 0 auto; text-align: center;">
     <p>
-      Nuestra misión es que tú monetices tu contenido y <strong style="text-decoration: underline">vivas de lo que te gusta hacer</strong>.
+      Nuestra misión es que tú monetices tu contenido y <strong style="text-decoration: underline">vivas de lo que te
+        gusta hacer</strong>.
     </p>
   </section>
 </div>
@@ -199,7 +213,8 @@
     style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto 3rem;">
     <div
       style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
-      <p style="font-style: italic;">"Casi pierdo mi canal de YouTube por no ser constante. Kreatiu ha salvado mi canal."</p>
+      <p style="font-style: italic;">"Casi pierdo mi canal de YouTube por no ser constante. Kreatiu ha salvado mi
+        canal."</p>
       <div style="display: flex; align-items: center; margin-top: 1rem;">
         <div
           style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
@@ -214,7 +229,8 @@
 
     <div
       style="background-color: white; color: black; border-radius: 1rem; padding: 1.5rem; max-width: 300px; width: 100%; text-align: left;">
-      <p style="font-style: italic;">"Ahora puedo crear contenido de calidad con el que llegar a mi público. Nunca me quedo sin ideas con Kreatiu."</p>
+      <p style="font-style: italic;">"Ahora puedo crear contenido de calidad con el que llegar a mi público. Nunca me
+        quedo sin ideas con Kreatiu."</p>
       <div style="display: flex; align-items: center; margin-top: 1rem;">
         <div
           style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.75rem;">
@@ -237,7 +253,8 @@
         </div>
         <div>
           <div style="font-weight: bold;">
-            <a target="_blank" href="https://tinku.es/kreatiu-gestion-automatizada-de-contenido-para-redes-sociales-con-ia/">Tinku TV</a>
+            <a target="_blank"
+              href="https://tinku.es/kreatiu-gestion-automatizada-de-contenido-para-redes-sociales-con-ia/">Tinku TV</a>
           </div>
           <div style="font-size: 0.85rem; color: gray;">Medio de comunicación enfocado al mundo empresarial</div>
         </div>
@@ -249,15 +266,15 @@
   <!-- Avatares de usuarios -->
   <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
     <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User 4"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
     <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User 5"
-         style="width: 48px; height: 48px; border-radius: 50%;"/>
+      style="width: 48px; height: 48px; border-radius: 50%;" />
   </div>
 
   <p style="font-size: 0.9rem; color: #ccc;">
@@ -267,7 +284,7 @@
 </div>
 
 <div class="container"
-     style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
+  style="background-color: #001970; color: white; padding: 4rem 2rem; text-align: center; align-items: center">
 
   <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem;">
     Kreatiu Influencers es gratis.
@@ -303,7 +320,7 @@
         </div>
         <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Influencer</h3>
         <div style="font-size: 2rem; font-weight: bold;">0 €<span
-          style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+            style="font-size: 1rem; font-weight: normal;">/mes</span></div>
         <p style="margin: 1rem 0; color: #555;">Da el primer paso</p>
         <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
           <li>✅ Acceso a la agenda básica</li>
@@ -342,7 +359,10 @@
         <mat-panel-title style="font-weight: bold;">1. ¿Qué es Kreatiu Influencers?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Kreatiu Influencers es la plataforma impulsada por IA que te ayuda a crear contenido de vídeo de calidad de forma constante, sin importar tu nivel de experiencia. Te ofrecemos herramientas como generación de guiones con IA, un teleprompter integrado y una agenda de contenido para que puedas crecer en redes sociales y monetizar tu pasión.
+        Kreatiu Influencers es la plataforma impulsada por IA que te ayuda a crear contenido de vídeo de calidad de
+        forma constante, sin importar tu nivel de experiencia. Te ofrecemos herramientas como generación de guiones con
+        IA, un teleprompter integrado y una agenda de contenido para que puedas crecer en redes sociales y monetizar tu
+        pasión.
       </p>
     </mat-expansion-panel>
 
@@ -352,7 +372,8 @@ Kreatiu Influencers es la plataforma impulsada por IA que te ayuda a crear conte
         <mat-panel-title style="font-weight: bold;">2. ¿Kreatiu es gratis?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Sí, Kreatiu ofrece un plan básico gratuito que te permite empezar a crear sin coste. Con este plan, tienes acceso a funcionalidades esenciales para que pruebes el poder de la IA en tu contenido.
+        Sí, Kreatiu ofrece un plan básico gratuito que te permite empezar a crear sin coste. Con este plan, tienes
+        acceso a funcionalidades esenciales para que pruebes el poder de la IA en tu contenido.
       </p>
     </mat-expansion-panel>
 
@@ -362,7 +383,9 @@ Sí, Kreatiu ofrece un plan básico gratuito que te permite empezar a crear sin 
         <mat-panel-title style="font-weight: bold;">3. ¿Qué incluye el plan gratuito de Kreatiu?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-El plan gratuito de Kreatiu incluye acceso a una agenda básica para planificar tu contenido, generación de guiones con IA (con posibles limitaciones de uso) y la posibilidad de grabar tus vídeos usando nuestro teleprompter web. También podrás exportar un número limitado de vídeos al mes.
+        El plan gratuito de Kreatiu incluye acceso a una agenda básica para planificar tu contenido, generación de
+        guiones con IA (con posibles limitaciones de uso) y la posibilidad de grabar tus vídeos usando nuestro
+        teleprompter web. También podrás exportar un número limitado de vídeos al mes.
       </p>
     </mat-expansion-panel>
 
@@ -372,7 +395,10 @@ El plan gratuito de Kreatiu incluye acceso a una agenda básica para planificar 
         <mat-panel-title style="font-weight: bold;">4. ¿Qué tipo de creadores pueden usar Kreatiu?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Kreatiu está diseñado para todo tipo de creadores: desde aquellos que buscan generar vídeos masivos y rápidos con un solo click gracias a la IA, hasta profesionales que desean perfeccionar su marca personal con guiones impecables y grabaciones de alta calidad con teleprompter. Queremos ayudarte a ser constante, profesional y rentable.
+        Kreatiu está diseñado para todo tipo de creadores: desde aquellos que buscan generar vídeos masivos y rápidos
+        con un solo click gracias a la IA, hasta profesionales que desean perfeccionar su marca personal con guiones
+        impecables y grabaciones de alta calidad con teleprompter. Queremos ayudarte a ser constante, profesional y
+        rentable.
       </p>
     </mat-expansion-panel>
 
@@ -382,34 +408,44 @@ Kreatiu está diseñado para todo tipo de creadores: desde aquellos que buscan g
         <mat-panel-title style="font-weight: bold;">5. ¿Necesito experiencia previa para usar Kreatiu?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-No, Kreatiu está diseñado para ser intuitivo y fácil de usar, sin importar tu nivel de experiencia. Nuestras herramientas de IA simplifican el proceso de creación de contenido, permitiéndote concentrarte en tus ideas.
+        No, Kreatiu está diseñado para ser intuitivo y fácil de usar, sin importar tu nivel de experiencia. Nuestras
+        herramientas de IA simplifican el proceso de creación de contenido, permitiéndote concentrarte en tus ideas.
       </p>
     </mat-expansion-panel>
     <!-- Pregunta 6 -->
     <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
       <mat-expansion-panel-header>
-        <mat-panel-title style="font-weight: bold;">6. ¿Cómo me ayuda Kreatiu a monetizar mi contenido?</mat-panel-title>
+        <mat-panel-title style="font-weight: bold;">6. ¿Cómo me ayuda Kreatiu a monetizar mi
+          contenido?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Nuestra misión es que monetices tu contenido y vivas de lo que te gusta hacer. Kreatiu te proporciona las herramientas para producir contenido de alta calidad de forma consistente, lo que te ayuda a crecer tu audiencia, aumentar el engagement y, en última instancia, abrir más oportunidades de monetización.
+        Nuestra misión es que monetices tu contenido y vivas de lo que te gusta hacer. Kreatiu te proporciona las
+        herramientas para producir contenido de alta calidad de forma consistente, lo que te ayuda a crecer tu
+        audiencia, aumentar el engagement y, en última instancia, abrir más oportunidades de monetización.
       </p>
     </mat-expansion-panel>
     <!-- Pregunta 7 -->
     <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
       <mat-expansion-panel-header>
-        <mat-panel-title style="font-weight: bold;">7. ¿Qué es el teleprompter de Kreatiu y cómo funciona?</mat-panel-title>
+        <mat-panel-title style="font-weight: bold;">7. ¿Qué es el teleprompter de Kreatiu y cómo
+          funciona?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Nuestro teleprompter es una herramienta integrada que te permite leer tu guion mientras grabas el vídeo directamente desde tu navegador. Esto asegura que tu mensaje sea fluido y profesional, sin necesidad de memorizar textos.
+        Nuestro teleprompter es una herramienta integrada que te permite leer tu guion mientras grabas el vídeo
+        directamente desde tu navegador. Esto asegura que tu mensaje sea fluido y profesional, sin necesidad de
+        memorizar textos.
       </p>
     </mat-expansion-panel>
     <!-- Pregunta 8 -->
     <mat-expansion-panel style="background-color: white; color: black; border-radius: 0.5rem; margin-bottom: 1rem;">
       <mat-expansion-panel-header>
-        <mat-panel-title style="font-weight: bold;">8. ¿La IA de Kreatiu crea los vídeos automáticamente?</mat-panel-title>
+        <mat-panel-title style="font-weight: bold;">8. ¿La IA de Kreatiu crea los vídeos
+          automáticamente?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-La IA de Kreatiu te ayuda a generar ideas de contenido y guiones. Para la creación de vídeos, puedes utilizar estas herramientas para producir vídeos masivos con IA en un click, o grabar tus propios vídeos con nuestro teleprompter usando los guiones generados.
+        La IA de Kreatiu te ayuda a generar ideas de contenido y guiones. Para la creación de vídeos, puedes utilizar
+        estas herramientas para producir vídeos masivos con IA en un click, o grabar tus propios vídeos con nuestro
+        teleprompter usando los guiones generados.
       </p>
     </mat-expansion-panel>
     <!-- Pregunta 9 -->
@@ -418,7 +454,8 @@ La IA de Kreatiu te ayuda a generar ideas de contenido y guiones. Para la creaci
         <mat-panel-title style="font-weight: bold;">9. ¿Kreatiu me ayuda a organizar mi contenido?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-Sí, Kreatiu incluye una agenda de contenido que te ayuda a planificar y organizar tus publicaciones de forma eficiente, asegurando que mantengas la constancia en tus redes sociales.
+        Sí, Kreatiu incluye una agenda de contenido que te ayuda a planificar y organizar tus publicaciones de forma
+        eficiente, asegurando que mantengas la constancia en tus redes sociales.
       </p>
     </mat-expansion-panel>
     <!-- Pregunta 10 -->
@@ -427,7 +464,9 @@ Sí, Kreatiu incluye una agenda de contenido que te ayuda a planificar y organiz
         <mat-panel-title style="font-weight: bold;">10. ¿Cómo puedo empezar a usar Kreatiu?</mat-panel-title>
       </mat-expansion-panel-header>
       <p style="padding: 1rem;">
-        Simplemente <a href="#" (click)="startWithGoogle()">Haz click aquí</a> y déjanos que te guiemos en el proceso de creación de tu cuenta. Con un solo click, podrás empezar a explorar todas las herramientas que Kreatiu tiene para ofrecerte.
+        Simplemente <a href="#" (click)="startWithGoogle()">Haz click aquí</a> y déjanos que te guiemos en el proceso de
+        creación de tu cuenta. Con un solo click, podrás empezar a explorar todas las herramientas que Kreatiu tiene
+        para ofrecerte.
       </p>
     </mat-expansion-panel>
   </mat-accordion>
@@ -473,7 +512,8 @@ Sí, Kreatiu incluye una agenda de contenido que te ayuda a planificar y organiz
     </div>
 
     <div class="footer-center">
-      <a mat-button routerLink="/legal/politica-de-privacidad" target="_blank">{{ 'HOME_PRIVACY_POLICY' | translate }}</a>
+      <a mat-button routerLink="/legal/politica-de-privacidad" target="_blank">{{ 'HOME_PRIVACY_POLICY' | translate
+        }}</a>
       <a mat-button routerLink="/legal/cookies" target="_blank">Cookies</a>
       <a mat-button routerLink="/legal/aviso-legal" target="_blank">{{ 'HOME_TERMS_CONDITIONS' | translate }}</a>
       <a mat-button href="#">{{ 'HOME_CONTACT' | translate }}</a>
@@ -488,4 +528,3 @@ Sí, Kreatiu incluye una agenda de contenido que te ayuda a planificar y organiz
   </div>
 
 </mat-toolbar>
-
